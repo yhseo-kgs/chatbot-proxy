@@ -1,116 +1,200 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>고압가스 특정설비 정보센터</title>
-    <link rel="stylesheet" href="styles/home_styles.css">
-    <link rel="stylesheet" href="styles/common_chatbot.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KGS AI 챗봇 테스트</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #114d6d;
+            margin: 0;
+        }
+        .chatbot-container {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+        .chatbot-header {
+            background: #114d6d;
+            color: white;
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        .chatbot-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: #f9f9f9;
+        }
+        .message {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+        .user-message {
+            background: #4A90E2;
+            color: white;
+            margin-left: auto;
+        }
+        .bot-message {
+            background: white;
+            border: 1px solid #ddd;
+        }
+        .chatbot-input {
+            padding: 15px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            gap: 10px;
+        }
+        .chatbot-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .chatbot-input button {
+            padding: 10px 20px;
+            background: #4A90E2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .chatbot-input button:hover {
+            background: #357ABD;
+        }
+        .loading {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
-    <div class="side-menu" id="menuPanel">
-        <div class="side-menu-close" onclick="toggleMenu()">✕</div>
-        <h4>
-            검사 가이드
-            <span style="margin-left:auto; color:#114d6d; font-size:12px;">﹀</span>
-        </h4>
-        <ul class="open">
-            <li><a href="inspection_info_select.html">특정설비 검사안내</a></li>
-            <li><a href="inspection_fee_select.html">검사 수수료</a></li>
-            <li><a href="inspection_apply.html">검사 신청 방법</a></li>
-        </ul>
-        <h4>
-            안전 가이드
-            <span style="margin-left:auto; color:#114d6d; font-size:12px;">﹀</span>
-        </h4>
-        <ul class="open">
-            <li><a href="safety_emergency.html">비상 대응 요령</a></li>
-            <li><a class="inactive">자가 안전 점검 요령</a></li>
-        </ul>
-        <h4 style="color:#ccc; cursor:default;">
-            <a href="notice.html" style="color:#114d6d; font-weight:bold; text-decoration:none;">공지사항</a>
-        </h4>
-        <h4 style="color:#ccc; cursor:default;">FAQ</h4>
-    </div>
-
     <div class="container">
-        <div class="header-bar">
-            <div class="header-left">
-                <a href="index.html" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit;">
-                    <img alt="KGS Logo" src="images/logo_primary_200.png"/>
-                    <div class="platform-name">
-                        고압가스 특정설비<br/>정보시스템
-                    </div>
-                </a>
+        <div class="header">
+            <h1>KGS AI 챗봇 테스트</h1>
+            <p>고압가스 특정설비 검사 및 안전관리 정보를 제공합니다</p>
+        </div>
+        
+        <div class="chatbot-container">
+            <div class="chatbot-header">
+                KGS AI 챗봇 (HCX-007 모델)
             </div>
-            <div class="menu-icon">
-                <svg class="lucide lucide-menu-icon lucide-menu" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 12h16"></path>
-                    <path d="M4 18h16"></path>
-                    <path d="M4 6h16"></path>
-                </svg>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="message bot-message">
+                    안녕하세요! 저는 KGS AI 챗봇입니다. 고압가스 특정설비 검사 및 안전관리에 대해 궁금한 것이 있으시면 언제든지 물어보세요! 😊
+                </div>
             </div>
-        </div>
-
-        <div class="page-title">특정설비 QR 정보조회</div>
-
-        <div style="text-align: center; margin: 16px 0;">
-            <img src="images/home_logo.png" alt="로고" style="width: 220px; max-width: 80%; height: auto;" />
-        </div>
-
-        <div class="search-box-bar-naver" style="margin: 20px 16px 0 16px; border: 1px solid #4A90E2;">
-            <input autocomplete="off" id="searchInput" placeholder="QR 번호 또는 관리번호를 입력하세요." type="text"/>
-            <button id="clearButton" style="position:absolute; right:60px; background:none; border:none; font-size:18px; color:#aaa; display:none; cursor:pointer;">✕</button>
-            <button onclick="search()" style="background:none; border:none; padding:0; cursor:pointer;">
-                <svg fill="none" height="28" stroke="#4A90E2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" style="background:none; box-shadow:none;" viewbox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
-                    <path d="m21 21-4.34-4.34"></path>
-                    <circle cx="11" cy="11" r="8"></circle>
-                </svg>
-            </button>
-        </div>
-
-        <div id="recent-searches-container" style="margin: 4px 16px 0 16px; background: white; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); font-size: 14px; display: none; overflow: hidden;">
-            <ul id="recent-searches-list" style="list-style: none; margin: 0; padding: 8px 0;"></ul>
-            <div style="border-top: 1px solid #eee; padding: 6px 10px; display: flex; justify-content: space-between;">
-                <span onclick="clearRecentSearches()" style="color:#1472b6; cursor:pointer;">전체 삭제</span>
-                <span onclick="hideRecentSearches()" style="color:#999; cursor:pointer;">최근검색어 닫기</span>
+            
+            <div class="chatbot-input">
+                <input type="text" id="message-input" placeholder="메시지를 입력하세요..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">전송</button>
             </div>
         </div>
     </div>
 
-    <div id="chatbot-button">
-        <img src="images/icon_chatbot.png" alt="챗봇 아이콘">
-    </div>
-    
-    <!-- 챗봇 패널 -->
-    <div id="chatbot-panel">
-        <div class="chatbot-header">
-            <div class="title">
-              <div class="bot-dot">
-                <img src="images/icon_chatbot.png" alt="챗봇 아이콘">
-              </div>
-              <span> KGS AI 챗봇</span>
-            </div>
-            <button id="chatbot-close">✕</button>
-          </div>
-        <div class="chatbot-body">
-            <div id="chatbot-stream" class="chatbot-stream">
-            </div>  
-        </div>
-        <div class="chatbot-input">
-            <div class="chatbot-search-container">
-                <textarea id="chatbot-input-box" rows="1" placeholder="메시지를 입력하세요…" style="resize:none; overflow:hidden;"></textarea>
-                <button id="chatbot-send" class="send-btn">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="m22 2-7 20-4-9-9-4Z"/>
-                        <path d="M22 2 11 13"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
-    
-    <script src="scripts/home_script.js"></script>
-    <script src="scripts/common_chatbot.js"></script>
+    <script>
+        async function sendMessage() {
+            const input = document.getElementById('message-input');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            // 사용자 메시지 표시
+            addMessage(message, 'user');
+            input.value = '';
+            
+            // 로딩 메시지 표시
+            const loadingId = addMessage('답변 준비 중...', 'bot', true);
+            
+            try {
+                // API 호출
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: message })
+                });
+                
+                const data = await response.json();
+                
+                // 로딩 메시지 제거
+                removeMessage(loadingId);
+                
+                if (data.status && data.status.code === '20000') {
+                    // 성공 응답
+                    addMessage(data.result.message.content, 'bot');
+                } else {
+                    // 오류 응답
+                    addMessage('⚠️ 오류: ' + (data.status?.message || '알 수 없는 오류'), 'bot');
+                }
+                
+            } catch (error) {
+                // 로딩 메시지 제거
+                removeMessage(loadingId);
+                
+                console.error('API 호출 오류:', error);
+                addMessage('⚠️ 서버와 연결할 수 없습니다.', 'bot');
+            }
+        }
+        
+        function addMessage(text, type, isLoading = false) {
+            const messagesContainer = document.getElementById('chatbot-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}-message`;
+            messageDiv.textContent = text;
+            
+            if (isLoading) {
+                messageDiv.className += ' loading';
+                messageDiv.id = 'loading-' + Date.now();
+            }
+            
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            
+            return messageDiv.id;
+        }
+        
+        function removeMessage(messageId) {
+            const message = document.getElementById(messageId);
+            if (message) {
+                message.remove();
+            }
+        }
+        
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+    </script>
 </body>
 </html>
