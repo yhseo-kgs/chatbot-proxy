@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "vercel dev",
-    "build": "echo 'No build step required for static site'",
-    "start": "echo 'Static site - no start script needed'"
+    "build": "echo 'Build completed'",
+    "start": "echo 'Static site ready'"
   },
   "keywords": ["vercel", "clova", "api", "proxy"],
   "author": "",
