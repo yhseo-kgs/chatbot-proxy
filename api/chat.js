@@ -1,30 +1,24 @@
-// api/chat.js (HCX-007 모델용)
+// api/chat.js
+const fetch = require("node-fetch");
+
 module.exports = async (req, res) => {
   // CORS 헤더 설정
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
-  // OPTIONS 요청 처리
-  if (req.method === 'OPTIONS') {
-    return res.status(200).end();
-  }
-
-  // POST 요청만 허용
-  if (req.method !== 'POST') {
-    return res.status(405).json({ 
-      status: { code: "40500", message: "Method Not Allowed" } 
-    });
+  if (req.method === "OPTIONS") return res.status(200).end();
+  if (req.method !== "POST") {
+    return res.status(405).json({ status: { code: "40500", message: "Method Not Allowed" } });
   }
 
   try {
-    const { message } = req.body ?? {};
+    // body 파싱 보장
+    const body = typeof req.body === "string" ? JSON.parse(req.body) : req.body;
+    const { message } = body ?? {};
     
-    // 입력 검증
-    if (!message || typeof message !== 'string' || message.trim().length === 0) {
-      return res.status(400).json({ 
-        status: { code: "40000", message: "message is required" } 
-      });
+    if (!message) {
+      return res.status(400).json({ status: { code: "40000", message: "message is required" } });
     }
 
     // 환경변수 확인
@@ -35,32 +29,29 @@ module.exports = async (req, res) => {
       });
     }
 
-    // Clova Studio HCX-007 엔드포인트
     const CLOVA_URL = "https://clovastudio.stream.ntruss.com/v3/chat-completions/HCX-007";
-
+    
     const clovaRes = await fetch(CLOVA_URL, {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${process.env.CLOVA_API_KEY}`,
         "Content-Type": "application/json",
-        "X-NCP-CLOVASTUDIO-REQUEST-ID": Date.now().toString()
       },
       body: JSON.stringify({
         messages: [
-          {
-            role: "system",
-            content: [
-              { 
-                type: "text", 
-                text: "당신은 한국가스안전공사 KGS의 고압가스 특정설비 검사 및 안전관리에 대한 전문적인 정보를 제공하는 AI 챗봇입니다. 정확하고 도움이 되는 정보를 제공해주세요." 
-              }
-            ]
+          { 
+            role: "system", 
+            content: [{ 
+              type: "text", 
+              text: "당신은 한국가스안전공사 KGS의 고압가스 특정설비 검사 및 안전관리에 대한 전문적인 정보를 제공하는 AI 챗봇입니다. 정확하고 도움이 되는 정보를 제공해주세요." 
+            }] 
           },
-          {
-            role: "user",
-            content: [
-              { type: "text", text: message.trim() }
-            ]
+          { 
+            role: "user", 
+            content: [{ 
+              type: "text", 
+              text: message 
+            }] 
           }
         ],
         thinking: { effort: "low" },
@@ -99,9 +90,8 @@ module.exports = async (req, res) => {
 
   } catch (err) {
     console.error("CLOVA proxy error:", err);
-    return res.status(500).json({
-      status: { code: "50000", message: "CLOVA call failed" },
-      error: err.message
+    return res.status(500).json({ 
+      status: { code: "50000", message: err.message } 
     });
   }
 };
