@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "QR 정보 시스템 with CLOVA Studio API Proxy",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "vercel dev",
     "build": "echo 'Build completed'",
@@ -10,8 +11,5 @@
   },
   "keywords": ["vercel", "clova", "api", "proxy"],
   "author": "",
-  "license": "MIT",
-  "engines": {
-    "node": ">=18.0.0"
-  }
+  "license": "MIT"
 }
