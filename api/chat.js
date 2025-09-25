@@ -27,15 +27,24 @@ const corsHeaders = {
 };
 
 export default async function handler(req, res) {
+  // CORS 헤더 설정 함수
+  const setCorsHeaders = () => {
+    Object.keys(corsHeaders).forEach(key => {
+      res.setHeader(key, corsHeaders[key]);
+    });
+  };
+
   // CORS preflight 요청 처리
   if (req.method === 'OPTIONS') {
-    res.status(200).set(corsHeaders).end();
+    setCorsHeaders();
+    res.status(200).end();
     return;
   }
 
   // POST 요청만 허용
   if (req.method !== 'POST') {
-    res.status(405).set(corsHeaders).json({ error: 'Method not allowed' });
+    setCorsHeaders();
+    res.status(405).json({ error: 'Method not allowed' });
     return;
   }
 
@@ -43,7 +52,8 @@ export default async function handler(req, res) {
     // 환경변수 검증
     if (!ACCESS_KEY || !SECRET_KEY || !CLOVA_API_KEY) {
       console.error('Missing required environment variables');
-      res.status(500).set(corsHeaders).json({ 
+      setCorsHeaders();
+      res.status(500).json({ 
         error: 'Server configuration error' 
       });
       return;
@@ -53,7 +63,8 @@ export default async function handler(req, res) {
     
     // 입력 검증
     if (!message || typeof message !== 'string' || message.trim().length === 0) {
-      res.status(400).set(corsHeaders).json({ 
+      setCorsHeaders();
+      res.status(400).json({ 
         error: 'Message is required and must be a non-empty string' 
       });
       return;
@@ -105,7 +116,8 @@ export default async function handler(req, res) {
     // 응답 상태 확인
     if (!response.ok) {
       console.error('CLOVA API Error:', data);
-      res.status(response.status).set(corsHeaders).json({ 
+      setCorsHeaders();
+      res.status(response.status).json({ 
         error: 'CLOVA API request failed',
         details: data 
       });
@@ -113,11 +125,13 @@ export default async function handler(req, res) {
     }
 
     // 성공 응답
-    res.status(200).set(corsHeaders).json(data);
+    setCorsHeaders();
+    res.status(200).json(data);
 
   } catch (error) {
     console.error("Chat API Error:", error);
-    res.status(500).set(corsHeaders).json({ 
+    setCorsHeaders();
+    res.status(500).json({ 
       error: "Internal server error",
       message: "Failed to connect to CLOVA Studio API" 
     });
