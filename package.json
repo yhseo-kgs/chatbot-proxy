@@ -1,0 +1,17 @@
+{
+  "name": "qr-js2-clova-proxy",
+  "version": "1.0.0",
+  "description": "QR 정보 시스템 with CLOVA Studio API Proxy",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build step required for static site'",
+    "start": "echo 'Static site - no start script needed'"
+  },
+  "keywords": ["vercel", "clova", "api", "proxy"],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
