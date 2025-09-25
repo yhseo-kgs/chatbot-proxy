@@ -1,6 +1,4 @@
-// api/chat.js
-const fetch = require("node-fetch");
-
+// api/chat.js (이전 방법으로 수정)
 module.exports = async (req, res) => {
   // CORS 헤더 설정
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -13,7 +11,7 @@ module.exports = async (req, res) => {
   }
 
   try {
-    // body 파싱 보장
+    // body 파싱 보장 (이전 방법)
     const body = typeof req.body === "string" ? JSON.parse(req.body) : req.body;
     const { message } = body ?? {};
     
@@ -29,6 +27,7 @@ module.exports = async (req, res) => {
       });
     }
 
+    // 내장 fetch 사용 (이전 방법)
     const CLOVA_URL = "https://clovastudio.stream.ntruss.com/v3/chat-completions/HCX-007";
     
     const clovaRes = await fetch(CLOVA_URL, {
