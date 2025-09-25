@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "QR 정보 시스템 with CLOVA Studio API Proxy",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "dev": "vercel dev",
     "build": "echo 'Build completed'",
