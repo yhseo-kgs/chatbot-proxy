@@ -60,22 +60,17 @@
                     // 기본 입력 이벤트 바인딩 (즉시 작동 보장)
                     setupBasicInputEvents();
                     
-                    // 그 다음 V2 시스템 로드
-                    const qnaStoreScript = document.createElement('script');
-                    qnaStoreScript.src = '../scripts/chatbot/qnaStore.js';
-                    qnaStoreScript.onload = function() {
-                        const initScript = document.createElement('script');
-                        initScript.type = 'module';
-                        initScript.src = '../scripts/chatbot/chatbotInit.js';
-                        
-                        // V2 로딩 실패 시 기본 기능 유지
-                        initScript.onerror = function() {
-                            console.warn('V2 초기화 실패, 기본 기능만 사용');
-                        };
-                        
-                        document.head.appendChild(initScript);
+                    // V2 시스템 로드 (모듈 방식 통일)
+                    const initScript = document.createElement('script');
+                    initScript.type = 'module';
+                    initScript.src = '../scripts/chatbot/chatbotInit.js';
+                    
+                    // V2 로딩 실패 시 기본 기능 유지
+                    initScript.onerror = function() {
+                        console.warn('V2 초기화 실패, 기본 기능만 사용');
                     };
-                    document.head.appendChild(qnaStoreScript);
+                    
+                    document.head.appendChild(initScript);
                 }, 100); // 100ms 대기 후 실행
             })
             .catch(error => console.error('챗봇 컴포넌트 로드 실패:', error));
