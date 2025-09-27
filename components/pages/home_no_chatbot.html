@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>고압가스 특정설비 정보센터</title>
+    <link rel="stylesheet" href="../styles/home_styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="page-title">특정설비 QR 정보조회</div>
+
+        <div style="text-align: center; margin: 16px 0;">
+            <img src="../images/home_logo.png" alt="로고" style="width: 220px; max-width: 80%; height: auto;" />
+        </div>
+
+        <div class="search-box-bar-naver" style="margin: 20px 16px 0 16px; border: 1px solid #4A90E2;">
+            <input autocomplete="off" id="searchInput" placeholder="QR 번호 또는 관리번호를 입력하세요." type="text"/>
+            <button id="clearButton" style="position:absolute; right:60px; background:none; border:none; font-size:18px; color:#aaa; display:none; cursor:pointer;">✕</button>
+            <button onclick="search()" style="background:none; border:none; padding:0; cursor:pointer;">
+                <svg fill="none" height="28" stroke="#4A90E2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" style="background:none; box-shadow:none;" viewbox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m21 21-4.34-4.34"></path>
+                    <circle cx="11" cy="11" r="8"></circle>
+                </svg>
+            </button>
+        </div>
+
+        <div id="recent-searches-container" style="margin: 4px 16px 0 16px; background: white; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); font-size: 14px; display: none; overflow: hidden;">
+            <ul id="recent-searches-list" style="list-style: none; margin: 0; padding: 8px 0;"></ul>
+            <div style="border-top: 1px solid #eee; padding: 6px 10px; display: flex; justify-content: space-between;">
+                <span onclick="clearRecentSearches()" style="color:#1472b6; cursor:pointer;">전체 삭제</span>
+                <span onclick="hideRecentSearches()" style="color:#999; cursor:pointer;">최근검색어 닫기</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 공통 컴포넌트 로드 -->
+    <script src="../scripts/common_loader.js"></script>
+    
+    <script src="../scripts/home_script.js"></script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>고압가스 특정설비 정보센터</title>
+    <link rel="stylesheet" href="../styles/home_styles.css">
+    <link rel="stylesheet" href="../styles/common_chatbot.css">
+</head>
+<body>
+    <div class="container">
+        <div class="page-title">특정설비 QR 정보조회</div>
+
+        <div style="text-align: center; margin: 16px 0;">
+            <img src="../images/home_logo.png" alt="로고" style="width: 220px; max-width: 80%; height: auto;" />
+        </div>
+
+        <div class="search-box-bar-naver" style="margin: 20px 16px 0 16px; border: 1px solid #4A90E2;">
+            <input autocomplete="off" id="searchInput" placeholder="QR 번호 또는 관리번호를 입력하세요." type="text"/>
+            <button id="clearButton" style="position:absolute; right:60px; background:none; border:none; font-size:18px; color:#aaa; display:none; cursor:pointer;">✕</button>
+            <button onclick="search()" style="background:none; border:none; padding:0; cursor:pointer;">
+                <svg fill="none" height="28" stroke="#4A90E2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" style="background:none; box-shadow:none;" viewbox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m21 21-4.34-4.34"></path>
+                    <circle cx="11" cy="11" r="8"></circle>
+                </svg>
+            </button>
+        </div>
+
+        <div id="recent-searches-container" style="margin: 4px 16px 0 16px; background: white; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); font-size: 14px; display: none; overflow: hidden;">
+            <ul id="recent-searches-list" style="list-style: none; margin: 0; padding: 8px 0;"></ul>
+            <div style="border-top: 1px solid #eee; padding: 6px 10px; display: flex; justify-content: space-between;">
+                <span onclick="clearRecentSearches()" style="color:#1472b6; cursor:pointer;">전체 삭제</span>
+                <span onclick="hideRecentSearches()" style="color:#999; cursor:pointer;">최근검색어 닫기</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 챗봇 컴포넌트 로드 -->
+    <div id="chatbot-container"></div>
+    
+    <!-- 공통 컴포넌트 로드 -->
+    <script src="../scripts/common_loader.js"></script>
+    
+    <script src="../scripts/home_script.js"></script>
+    <script>
+        // 챗봇 컴포넌트 로드
+        fetch('../components/chatbot.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('chatbot-container').innerHTML = html;
+                
+                // DOM 삽입 후 잠시 대기
+                setTimeout(() => {
+                    // 우선 기본 패널 이벤트 바인딩 (즉시 작동 보장)
+                    setupBasicPanelEvents();
+                    
+                    // 기본 웰컴카드 즉시 렌더링
+                    renderBasicWelcomeCards();
+                    
+                    // 기본 입력 이벤트 바인딩 (즉시 작동 보장)
+                    setupBasicInputEvents();
+                    
+                    // 그 다음 V2 시스템 로드
+                    const qnaStoreScript = document.createElement('script');
+                    qnaStoreScript.src = '../scripts/chatbot/qnaStore.js';
+                    qnaStoreScript.onload = function() {
+                        const initScript = document.createElement('script');
+                        initScript.type = 'module';
+                        initScript.src = '../scripts/chatbot/chatbotInit.js';
+                        
+                        // V2 로딩 실패 시 기본 기능 유지
+                        initScript.onerror = function() {
+                            console.warn('V2 초기화 실패, 기본 기능만 사용');
+                        };
+                        
+                        document.head.appendChild(initScript);
+                    };
+                    document.head.appendChild(qnaStoreScript);
+                }, 100); // 100ms 대기 후 실행
+            })
+            .catch(error => console.error('챗봇 컴포넌트 로드 실패:', error));
+        
+        // 기본 패널 이벤트 함수 (V1 방식과 동일)
+        function setupBasicPanelEvents() {
+            const chatbotBtn = document.getElementById("chatbot-button");
+            const chatbotPanel = document.getElementById("chatbot-panel");
+            const chatbotClose = document.getElementById("chatbot-close");
+            
+            console.log('챗봇 DOM 요소 확인:', {
+                button: !!chatbotBtn,
+                panel: !!chatbotPanel,
+                close: !!chatbotClose
+            });
+            
+            if (chatbotBtn && chatbotPanel) {
+                console.log('[기본모드] 챗봇 패널 이벤트 바인딩 완료');
+                
+                // 기존 이벤트 제거 (중복 방지)
+                chatbotBtn.onclick = null;
+                
+                // 새 이벤트 바인딩 (V1과 동일한 방식)
+                chatbotBtn.addEventListener("click", function() {
+                    console.log('[기본모드] 챗봇 버튼 클릭됨');
+                    chatbotPanel.style.display = "flex";
+                    requestAnimationFrame(() => {
+                        chatbotPanel.classList.add("is-open");
+                    });
+                });
+                
+                if (chatbotClose) {
+                    chatbotClose.onclick = null;
+                    chatbotClose.addEventListener("click", function() {
+                        console.log('[기본모드] 챗봇 닫기 버튼 클릭됨');
+                        chatbotPanel.classList.remove("is-open");
+                        setTimeout(() => {
+                            if (!chatbotPanel.classList.contains("is-open")) {
+                                chatbotPanel.style.display = "none";
+                            }
+                        }, 250);
+                    });
+                }
+            } else {
+                console.error('[기본모드] 챗봇 DOM 요소를 찾을 수 없음:', {
+                    chatbotBtn, chatbotPanel, chatbotClose
+                });
+            }
+        }
+        
+        // 기본 웰컴카드 렌더링 함수
+        function renderBasicWelcomeCards() {
+            const stream = document.getElementById("chatbot-stream");
+            if (!stream) {
+                console.error('챗봇 스트림을 찾을 수 없음');
+                return;
+            }
+            
+            console.log('[기본모드] 웰컴카드 렌더링 시작');
+            
+            const welcomeMessages = [
+                "안녕하세요 🙂 저는 KGS AI 챗봇입니다.\n특정설비 검사·안전 정보를 안내해드려요.",
+                "현재는 시범사업 단계로,\n압력용기와 관련된 내용만 안내해드립니다.",
+                "본 대화 내용은 서비스 품질 향상과 원활한\n지원을 위해 기록·저장됨을 알려드립니다.",
+                "아래 버튼을 눌러보시거나\n검색창에 궁금한 걸 입력해 보세요 🙂"
+            ];
+            
+            // 웰컴 메시지들 추가
+            welcomeMessages.forEach(text => {
+                const wrapper = document.createElement("div");
+                wrapper.classList.add("chatbot-message", "bot");
+                
+                const content = document.createElement("div");
+                content.classList.add("chatbot-content");
+                
+                // 아바타
+                const avatar = document.createElement("img");
+                avatar.src = "../images/icon_chatbot.png";
+                avatar.alt = "챗봇";
+                avatar.classList.add("chatbot-avatar");
+                wrapper.appendChild(avatar);
+                
+                // 말풍선
+                const bubble = document.createElement("div");
+                bubble.classList.add("chatbot-bubble", "bot");
+                bubble.textContent = text;
+                content.appendChild(bubble);
+                
+                // 시간
+                const time = document.createElement("div");
+                time.classList.add("chatbot-time");
+                time.textContent = new Date().toLocaleTimeString("ko-KR", { 
+                    hour: "2-digit", 
+                    minute: "2-digit",
+                    hour12: false 
+                });
+                content.appendChild(time);
+                
+                wrapper.appendChild(content);
+                stream.appendChild(wrapper);
+            });
+            
+            // 칩 버튼과 안내문 추가
+            stream.innerHTML += `
+                <div class="chips">
+                    <div class="chip">압력용기 법정 검사</div>
+                    <div class="chip">검사 신청 방법</div>
+                    <div class="chip">검사 수수료</div>
+                    <div class="chip">안전관리 요령</div>
+                    <div class="chip">관할 지사 찾기</div>
+                    <button class="chip chip-more" id="chip-more" aria-expanded="false">더보기 ▾</button>
+                </div>
+                <p style="font-size:13px; color:#666; margin-top:16px;">
+                    ※ 본 챗봇은 참고용 안내 서비스이며, 법적 효력은 없습니다.<br/>
+                    정확한 확인은 관할 지사에 문의하시기 바랍니다.
+                </p>
+            `;
+            
+            console.log('[기본모드] 웰컴카드 렌더링 완료');
+        }
+        
+        // 기본 입력 이벤트 바인딩 함수
+        function setupBasicInputEvents() {
+            const inputBox = document.getElementById("chatbot-input-box");
+            const sendBtn = document.getElementById("chatbot-send");
+            const stream = document.getElementById("chatbot-stream");
+            
+            console.log('챗봇 입력 요소 확인:', {
+                inputBox: !!inputBox,
+                sendBtn: !!sendBtn,
+                stream: !!stream
+            });
+            
+            if (!inputBox || !sendBtn || !stream) {
+                console.error('[기본모드] 입력 요소를 찾을 수 없음');
+                return;
+            }
+            
+            console.log('[기본모드] 입력 이벤트 바인딩 완료');
+            
+            // 메시지 생성 함수
+            function createBasicMessage(role, text) {
+                return {
+                    id: Date.now(),
+                    role: role,
+                    text: text,
+                    createdAt: Date.now()
+                };
+            }
+            
+            // 메시지 추가 함수
+            function appendBasicMessage(message) {
+                const wrapper = document.createElement("div");
+                wrapper.classList.add("chatbot-message", message.role);
+                
+                const content = document.createElement("div");
+                content.classList.add("chatbot-content");
+                
+                // 봇 메시지면 아바타 추가
+                if (message.role === "bot") {
+                    const avatar = document.createElement("img");
+                    avatar.src = "../images/icon_chatbot.png";
+                    avatar.alt = "챗봇";
+                    avatar.classList.add("chatbot-avatar");
+                    wrapper.appendChild(avatar);
+                }
+                
+                // 말풍선
+                const bubble = document.createElement("div");
+                bubble.classList.add("chatbot-bubble", message.role);
+                bubble.textContent = message.text;
+                content.appendChild(bubble);
+                
+                // 시간
+                const time = document.createElement("div");
+                time.classList.add("chatbot-time");
+                time.textContent = new Date(message.createdAt).toLocaleTimeString("ko-KR", { 
+                    hour: "2-digit", 
+                    minute: "2-digit",
+                    hour12: false 
+                });
+                content.appendChild(time);
+                
+                wrapper.appendChild(content);
+                stream.appendChild(wrapper);
+                
+                // 스크롤 보정
+                const scroller = document.querySelector('.chatbot-body');
+                if (scroller) {
+                    requestAnimationFrame(() => {
+                        scroller.scrollTo({
+                            top: scroller.scrollHeight,
+                            behavior: 'smooth'
+                        });
+                    });
+                }
+            }
+            
+            // 사용자 입력 처리 함수
+            function handleBasicInput() {
+                const text = inputBox.value.trim();
+                if (!text) return;
+                
+                console.log('[기본모드] 사용자 입력:', text);
+                
+                // 사용자 메시지 추가
+                const userMsg = createBasicMessage("user", text);
+                appendBasicMessage(userMsg);
+                inputBox.value = "";
+                
+                // V2가 초기화되었는지 확인
+                if (window.chatbotManager && window.chatbotManager.getStatus().initialized) {
+                    console.log('[기본모드] V2로 전환하여 처리');
+                    // V2가 있으면 V2로 처리 (이미 사용자 메시지는 추가됨)
+                    return;
+                }
+                
+                // V2가 없으면 기본 응답
+                setTimeout(() => {
+                    const botMsg = createBasicMessage("bot", 
+                        "⚠️ 챗봇 시스템을 로딩 중입니다.\n잠시 후 다시 시도해주세요."
+                    );
+                    appendBasicMessage(botMsg);
+                }, 500);
+            }
+            
+            // 이벤트 바인딩
+            sendBtn.addEventListener('click', handleBasicInput);
+            
+            inputBox.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    handleBasicInput();
+                }
+            });
+            
+            // 칩 버튼 이벤트 (이벤트 위임)
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('chip') && !e.target.classList.contains('chip-more')) {
+                    const chipText = e.target.textContent.trim();
+                    inputBox.value = chipText;
+                    handleBasicInput();
+                }
+            });
+        }
+    </script>
+</body>
+</html>

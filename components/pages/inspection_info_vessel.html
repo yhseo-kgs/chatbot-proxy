@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<title>
+   검사 안내
+  </title>
+<link rel="stylesheet" href="../styles/inspection_info_vessel.css">
+</head>
+<body>
+<div class="side-menu" id="menuPanel">
+<div class="side-menu-close" onclick="toggleMenu()">
+    ✕
+   </div>
+<h4>
+    검사 가이드
+    <span style="margin-left:auto; color:#114d6d; font-size:12px;">
+     ﹀
+    </span>
+</h4>
+<ul class="open">
+<li>
+<a href="inspection_info_select.html">
+      특정설비 검사안내
+     </a>
+</li>
+<li>
+<a href="inspection_fee_select.html">
+      검사 수수료
+     </a>
+</li>
+<li>
+<a href="inspection_apply.html">
+      검사 신청 방법
+     </a>
+</li>
+</ul>
+<h4>
+    안전 가이드
+    <span style="margin-left:auto; color:#114d6d; font-size:12px;">
+     ﹀
+    </span>
+</h4>
+<ul class="open">
+<li>
+<a href="safety_emergency.html">비상 대응 요령</a>
+</li>
+<li>
+<a class="inactive">
+      자가 안전 점검 요령
+     </a>
+</li>
+</ul>
+<h4 style="color:#ccc; cursor:default;">
+<a href="notice.html" style="color:#114d6d; font-weight:bold; text-decoration:none;">
+     공지사항
+    </a>
+</h4>
+<h4 style="color:#ccc; cursor:default;">
+    FAQ
+   </h4>
+</div>
+<div class="container">
+<div class="header-bar">
+<div class="header-left">
+<a href="home.html" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit;">
+<img alt="KGS Logo" src="../images/logo_primary_200.png"/>
+<div class="platform-name">
+       고압가스 특정설비
+       <br/>
+       정보시스템
+      </div>
+</a>
+</div>
+<div class="menu-icon">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 12h16"/><path d="M4 18h16"/><path d="M4 6h16"/></svg></div>
+</div>
+<div class="header">
+    [압력용기] 검사 안내
+   </div>
+<div class="breadcrumb" style="font-size:12px; color:#666; margin: 12px 16px 0 16px; text-align: left;">
+  홈 &gt; 검사 가이드 &gt; 특정설비 검사안내 &gt; 압력용기
+</div>
+<div class="content">
+<h3>
+  압력용기란?
+</h3>
+<div style="text-align: center;">
+  35℃에서의 압력 또는 설계압력이 그 내용물이<br/>
+<span style="font-weight: bold; color: #245e7a;">액화가스</span>는 0.2㎫ 이상,<br/>
+<span style="font-weight: bold; color: #245e7a;">압축가스</span>인 경우는 1㎫ 이상인 용기를 압력용기라 합니다.
+<h3>특정설비 제조 등록제</h3>
+<p style="text-align: center;">
+  고압가스안전관리법 제5조에 의해 <strong style="color: #245e7a;">특정설비</strong><br/>
+<strong style="color: #245e7a;">제조등록업체에서만 압력용기를 제조</strong>할 수 있습니다.
+</p>
+</div>
+<div class="content">
+<h3>압력용기 검사</h3>
+<div class="card-shadow-wrapper" style="box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-radius: 10px; overflow: hidden; margin-top: 12px;">
+<div class="tabs">
+<div class="tab active" onclick="switchTab('prod')">생산단계검사</div>
+<div class="tab" onclick="switchTab('retest')">재검사</div>
+</div>
+<div class="card-list" id="prod">
+<div class="card">
+<div class="volume">의무대상</div>
+<div class="price">고압가스를 제조하여 사용하려는 경우</div>
+</div>
+<div class="card">
+<div class="volume">관련조항</div>
+<div class="price">「고압가스안전관리법」 제17조제1항</div>
+</div>
+</div>
+<div class="card-list" id="retest" style="display:none;">
+<div class="card">
+<div class="volume">검사주기</div>
+<div class="price">최초 설치 이후 4년마다</div>
+</div>
+<div class="card">
+<div class="volume">그외조항</div>
+<div class="price">용기손상, 명판훼손, 충전가스변경 시 의무</div>
+</div>
+<div class="card">
+<div class="volume">관련조항</div>
+<div class="price">「고압가스안전관리법」 제17조제2항</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-nav">
+<div class="footer-guide-wrapper">
+<div class="footer-guide-line">
+</div>
+<div class="footer-guide-label">
+      다른 안내 보기
+     </div>
+</div>
+<div class="footer-buttons">
+<a href="inspection_fee_select.html">
+      검사 수수료
+     </a>
+<a href="home.html">
+      홈
+     </a>
+<a href="inspection_apply.html">
+      검사 신청방법
+     </a>
+</div>
+</div></div>
+<script src="../scripts/inspection_info_vessel.js"></script>
+</body>
+</html>
