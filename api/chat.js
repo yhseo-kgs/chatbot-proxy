@@ -34,7 +34,8 @@ module.exports = async (req, res) => {
       method: "POST",
       headers: {
         "X-NCP-CLOVASTUDIO-API-KEY": process.env.CLOVA_API_KEY,
-        "X-NCP-APIGW-API-KEY": process.env.NCP_ACCESS_KEY,
+        "X-NCP-APIGW-API-KEY-ID": process.env.NCP_ACCESS_KEY,
+        "X-NCP-APIGW-API-KEY": process.env.NCP_SECRET_KEY,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
