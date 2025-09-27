@@ -1,126 +1,106 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KGS AI 챗봇 테스트</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .header h1 {
-            color: #114d6d;
-            margin: 0;
-        }
-        .chatbot-container {
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            height: 400px;
-            display: flex;
-            flex-direction: column;
-        }
-        .chatbot-header {
-            background: #114d6d;
-            color: white;
-            padding: 15px;
-            border-radius: 10px 10px 0 0;
-            text-align: center;
-            font-weight: bold;
-        }
-        .chatbot-messages {
-            flex: 1;
-            padding: 15px;
-            overflow-y: auto;
-            background: #f9f9f9;
-        }
-        .message {
-            margin-bottom: 15px;
-            padding: 10px;
-            border-radius: 10px;
-            max-width: 80%;
-        }
-        .user-message {
-            background: #4A90E2;
-            color: white;
-            margin-left: auto;
-        }
-        .bot-message {
-            background: white;
-            border: 1px solid #ddd;
-        }
-        .chatbot-input {
-            padding: 15px;
-            border-top: 1px solid #ddd;
-            display: flex;
-            gap: 10px;
-        }
-        .chatbot-input input {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        .chatbot-input button {
-            padding: 10px 20px;
-            background: #4A90E2;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .chatbot-input button:hover {
-            background: #357ABD;
-        }
-        .loading {
-            text-align: center;
-            color: #666;
-            font-style: italic;
-        }
-    </style>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>고압가스 특정설비 정보센터</title>
+    <link rel="stylesheet" href="styles/home_styles.css">
+    <link rel="stylesheet" href="styles/common_chatbot.css">
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>KGS AI 챗봇 테스트</h1>
-            <p>고압가스 특정설비 검사 및 안전관리 정보를 제공합니다</p>
+        <div class="page-title">특정설비 QR 정보조회</div>
+
+        <div style="text-align: center; margin: 16px 0;">
+            <img src="images/home_logo.png" alt="로고" style="width: 220px; max-width: 80%; height: auto;" />
         </div>
-        
-        <div class="chatbot-container">
-            <div class="chatbot-header">
-                KGS AI 챗봇 (HCX-007 모델)
-            </div>
-            
-            <div class="chatbot-messages" id="chatbot-messages">
-                <div class="message bot-message">
-                    안녕하세요! 저는 KGS AI 챗봇입니다. 고압가스 특정설비 검사 및 안전관리에 대해 궁금한 것이 있으시면 언제든지 물어보세요! 😊
-                </div>
-            </div>
-            
-            <div class="chatbot-input">
-                <input type="text" id="message-input" placeholder="메시지를 입력하세요..." onkeypress="handleKeyPress(event)">
-                <button onclick="sendMessage()">전송</button>
+
+        <div class="search-box-bar-naver" style="margin: 20px 16px 0 16px; border: 1px solid #4A90E2;">
+            <input autocomplete="off" id="searchInput" placeholder="QR 번호 또는 관리번호를 입력하세요." type="text"/>
+            <button id="clearButton" style="position:absolute; right:60px; background:none; border:none; font-size:18px; color:#aaa; display:none; cursor:pointer;">✕</button>
+            <button onclick="search()" style="background:none; border:none; padding:0; cursor:pointer;">
+                <svg fill="none" height="28" stroke="#4A90E2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" style="background:none; box-shadow:none;" viewbox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m21 21-4.34-4.34"></path>
+                    <circle cx="11" cy="11" r="8"></circle>
+                </svg>
+            </button>
+        </div>
+
+        <div id="recent-searches-container" style="margin: 4px 16px 0 16px; background: white; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); font-size: 14px; display: none; overflow: hidden;">
+            <ul id="recent-searches-list" style="list-style: none; margin: 0; padding: 8px 0;"></ul>
+            <div style="border-top: 1px solid #eee; padding: 6px 10px; display: flex; justify-content: space-between;">
+                <span onclick="clearRecentSearches()" style="color:#1472b6; cursor:pointer;">전체 삭제</span>
+                <span onclick="hideRecentSearches()" style="color:#999; cursor:pointer;">최근검색어 닫기</span>
             </div>
         </div>
     </div>
 
+    <!-- 챗봇 컴포넌트 로드 -->
+    <div id="chatbot-container"></div>
+    
+    <!-- 공통 컴포넌트 로드 -->
+    <script src="scripts/common_loader.js"></script>
+    
+    <script src="scripts/home_script.js"></script>
     <script>
+        // 챗봇 컴포넌트 로드
+        fetch('components/chatbot.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('chatbot-container').innerHTML = html;
+                
+                // DOM 삽입 후 잠시 대기
+                setTimeout(() => {
+                    // 우선 기본 패널 이벤트 바인딩 (즉시 작동 보장)
+                    setupBasicPanelEvents();
+                    
+                    // 기본 웰컴카드 즉시 렌더링
+                    renderBasicWelcomeCards();
+                    
+                    // 기본 입력 이벤트 바인딩 (즉시 작동 보장)
+                    setupBasicInputEvents();
+                    
+                    // 그 다음 V2 시스템 로드
+                    const qnaStoreScript = document.createElement('script');
+                    qnaStoreScript.src = 'scripts/chatbot/qnaStore.js';
+                    qnaStoreScript.onload = function() {
+                        const initScript = document.createElement('script');
+                        initScript.type = 'module';
+                        initScript.src = 'scripts/chatbot/chatbotInit.js';
+                        
+                        // V2 로딩 실패 시 기본 기능 유지
+                        initScript.onerror = function() {
+                            console.warn('V2 초기화 실패, 기본 기능만 사용');
+                        };
+                        
+                        document.head.appendChild(initScript);
+                    };
+                    document.head.appendChild(qnaStoreScript);
+                }, 100); // 100ms 대기 후 실행
+            })
+            .catch(error => console.error('챗봇 컴포넌트 로드 실패:', error));
+
+        // 간단한 비밀번호 (실제로는 더 복잡하게 설정)
+        const TEST_PASSWORD = "kgs2024";
+        
+        function authenticate() {
+            const password = document.getElementById('password-input').value;
+            const errorDiv = document.getElementById('auth-error');
+            
+            if (password === TEST_PASSWORD) {
+                document.getElementById('auth-section').style.display = 'none';
+                document.getElementById('chatbot-container').style.display = 'flex';
+            } else {
+                errorDiv.textContent = '비밀번호가 올바르지 않습니다.';
+            }
+        }
+        
+        function handleAuthKeyPress(event) {
+            if (event.key === 'Enter') {
+                authenticate();
+            }
+        }
+        
         async function sendMessage() {
             const input = document.getElementById('message-input');
             const message = input.value.trim();
