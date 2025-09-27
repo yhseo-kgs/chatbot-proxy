@@ -117,7 +117,7 @@ export class ChatbotManager {
     }
   }
 
-  async handleInput(text = null) {
+  async handleInput(text = null, options = {}) {
     if (!this.isInitialized) {
       console.warn('챗봇이 아직 초기화되지 않았습니다.');
       return;
@@ -129,17 +129,21 @@ export class ChatbotManager {
     // UI 상태 업데이트
     this.ui.setInputDisabled(true);
     
-    // 사용자 메시지 표시
-    const userMessage = this.ui.createMessage('user', query);
-    this.ui.appendMessage(userMessage);
+    // 사용자 메시지 표시 (이미 표시된 경우 스킵)
+    if (!options.skipUserMessage) {
+      const userMessage = this.ui.createMessage('user', query);
+      this.ui.appendMessage(userMessage);
+    }
     
     // 입력창 초기화 (사용자 입력인 경우)
     if (!text) {
       this.ui.resetInput();
     }
 
-    // 로딩 표시
-    this.ui.showLoading();
+    // 로딩 표시 (이미 표시된 경우 스킵)
+    if (!options.skipLoading) {
+      this.ui.showLoading();
+    }
 
     try {
       // 핵심 로직 처리

@@ -195,11 +195,16 @@ export class ChatbotUI {
     }
   }
 
-  // 로딩 메시지 표시
+  // 로딩 메시지 표시 (최적화)
   showLoading() {
-    const loadingMsg = this.createMessage('bot', '🤖 답변 준비 중...');
+    const loadingMsg = this.createMessage('bot', '💭 답변 준비 중...');
     const wrapper = this.appendMessage(loadingMsg);
     wrapper.classList.add('loading-message');
+    // 스크롤 최적화: 로딩 메시지는 즉시 스크롤
+    requestAnimationFrame(() => {
+      const scroller = document.querySelector('.chatbot-body');
+      if (scroller) scroller.scrollTop = scroller.scrollHeight;
+    });
     return wrapper;
   }
 
@@ -231,21 +236,27 @@ export class ChatbotUI {
     return (role === 'user' || role === 'bot' || role === 'notice') ? role : 'bot';
   }
 
-  // 스크롤 보정
+  // 스크롤 보정 (성능 최적화)
   scrollToBottom() {
     if (!this.stream) return;
     
     const scroller = document.querySelector('.chatbot-body');
     if (!scroller) return;
     
-    const nearBottom = scroller.scrollHeight - scroller.scrollTop - scroller.clientHeight < 20;
-    if (!nearBottom) return;
+    // 성능 최적화: 이미 스크롤 중이면 스킵
+    if (this.isScrolling) return;
+    this.isScrolling = true;
     
+    const nearBottom = scroller.scrollHeight - scroller.scrollTop - scroller.clientHeight < 50;
+    if (!nearBottom) {
+      this.isScrolling = false;
+      return;
+    }
+    
+    // 부드러운 스크롤 대신 즉시 스크롤 (성능 향상)
     requestAnimationFrame(() => { 
-      scroller.scrollTo({
-        top: scroller.scrollHeight,
-        behavior: 'smooth'
-      });
+      scroller.scrollTop = scroller.scrollHeight;
+      this.isScrolling = false;
     });
   }
 
@@ -270,6 +281,11 @@ export class ChatbotUI {
   // 웰컴 카드 렌더링
   renderWelcomeCards() {
     if (!this.stream) return;
+    
+    // 기존 웰컴카드 제거 (중복 방지)
+    this.stream.innerHTML = '';
+    this.messages = [];
+    console.log('[ChatbotUI] 기존 웰컴카드 제거 후 V2 웰컴카드 렌더링');
     
     const welcomeMessages = [
       "안녕하세요 🙂 저는 KGS AI 챗봇입니다.\n특정설비 검사·안전 정보를 안내해드려요.",
