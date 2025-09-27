@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<title>
+   검사 신청방법
+  </title>
+<link rel="stylesheet" href="../styles/safety_emergency.css">
+<link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+<div class="side-menu" id="menuPanel">
+<div class="side-menu-close" onclick="toggleMenu()">
+    ✕
+   </div>
+<h4>
+    검사 가이드
+    <span style="margin-left:auto; color:#114d6d; font-size:12px;">
+     ﹀
+    </span>
+</h4>
+<ul class="open">
+<li>
+<a href="inspection_info_select.html">
+      특정설비 검사안내
+     </a>
+</li>
+<li>
+<a href="inspection_fee_select.html">
+      검사 수수료
+     </a>
+</li>
+<li>
+<a href="inspection_apply.html">
+      검사 신청 방법
+     </a>
+</li>
+</ul>
+<h4>
+    안전 가이드
+    <span style="margin-left:auto; color:#114d6d; font-size:12px;">
+     ﹀
+    </span>
+</h4>
+<ul class="open">
+<li>
+<a href="safety_emergency.html">비상 대응 요령</a>
+</li>
+<li>
+<a class="inactive">
+      자가 안전 점검 요령
+     </a>
+</li>
+</ul>
+<h4 style="color:#ccc; cursor:default;">
+<a href="notice.html" style="color:#114d6d; font-weight:bold; text-decoration:none;">
+     공지사항
+    </a>
+</h4>
+<h4 style="color:#ccc; cursor:default;">
+    FAQ
+   </h4>
+</div>
+<div class="container" style="color: #4A4A4A">
+<div class="header-bar">
+<div class="header-left">
+<a href="home.html" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit;">
+<img alt="KGS Logo" src="../images/logo_primary_200.png"/>
+<div class="platform-name">
+       고압가스 특정설비
+       <br/>
+       정보시스템
+      </div>
+</a>
+</div>
+<div class="menu-icon">
+<svg class="lucide lucide-menu-icon lucide-menu" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"></path></svg></div>
+</div>
+<div class="header">
+    비상대응요령
+   </div>
+<div class="breadcrumb" style="font-size:12px; color:#666; margin: 12px 16px 0 16px; text-align: left;">
+  홈 &gt; 안전 가이드 &gt; 비상대응요령
+</div>
+<div class="content">
+<h3 style="font-size: 18px; text-align: center; margin-bottom: 16px; color: #4A4A4A">가스 누출 대응 및 조치요령</h3>
+<div class="guide-lead-wrapper" style="text-align: center;"><div class="guide-lead gas-warning" style="font-size: 15px; line-height: 1.8; color: #333;">
+압력용기·저장탱크 등 <span style="color:#3b7fa8; font-weight:bold;">특정설비에서 가스가 누출될 경우</span>,<br/>
+화재, 폭발, 중독 등 2차 피해로 이어질 수 있기 때문에<br/>
+침착하고 정확한 대응이 매우 중요합니다.
+</div><div class="guide-lead gas-guidance" style="font-size: 15px; line-height: 1.8; color: #333; margin-top: 12px;">
+아래에 제시된 <span style="color:#3b7fa8; font-weight:bold;">응급조치 요령과 누출 시 대처법</span>을 숙지하고<br/>
+상황에 따라 적절히 활용하시기 바랍니다.
+</div></div>
+</div>
+<div class="gas-effect-table" style="margin: 12px; background: white; padding: 12px; overflow: hidden;">
+<div class="gas-effect-table-title" style="text-align: left; font-size: 17px; font-weight: bold; margin-bottom: 20px; color: #4A4A4A"> I . 주요 독성가스 누출 시 피해</div>
+<div class="gas-effect-breathe">
+<div class="ammonia_box" style="position: relative; padding: 6px; border-radius: 8px;">
+<img alt="암모니아" src="../images/safety_emergency_ammonia.png" style="width: 100%; height: auto; border-radius: 8px;"/>
+<!-- 좌상단 브랜드 뱃지 -->
+<div class="ammonia_badge" style="position: absolute;top: 0px;left: 3px;background: linear-gradient(145deg, #125b80, #0f3f5d);color: white;font-size: 13px;font-weight: 600;padding: 5px 12px;border-radius: 0 0 14px 14px;box-shadow: 0 2px 6px rgba(0,0,0,0.2);z-index: 2;letter-spacing: 0.5px;">암모니아 흡입</div>
+<!-- 우상단 증상 뱃지들 -->
+<div class="ammonia_breathe_badge_wrapper" style="position: absolute; bottom: 10px; width: 100%;display: flex; flex-wrap: wrap; justify-content: center; gap: 2px; z-index: 2;"><div style="background-color: #b91c1c; color: white; font-size: 12px; padding: 4px 10px; border-radius: 999px; white-space: nowrap; text-align: center; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);">구역질</div><div style="background-color: #b91c1c; color: white; font-size: 12px; padding: 4px 10px; border-radius: 999px; white-space: nowrap; text-align: center; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);">기관지염</div><div style="background-color: #b91c1c; color: white; font-size: 12px; padding: 4px 10px; border-radius: 999px; white-space: nowrap; text-align: center; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);">질식</div></div></div>
+<div class="chlorine_box" style="position: relative; padding: 6px; border-radius: 8px;">
+<img alt="염소" src="../images/safety_emergency_chlorine.png" style="width: 100%; height: auto; border-radius: 8px;"/>
+<!-- 좌상단 브랜드 뱃지 -->
+<div class="chlorine_badge" style="position: absolute;top: 0px;left: 3px;background: linear-gradient(145deg, #125b80, #0f3f5d);color: white;font-size: 13px;font-weight: 600;padding: 5px 12px;border-radius: 0 0 14px 14px;box-shadow: 0 2px 6px rgba(0,0,0,0.2);z-index: 2;letter-spacing: 0.5px;">염소 흡입</div>
+<!-- 우상단 증상 뱃지들 -->
+<div class="cholorine_breathe_badge_wrapper" style="position: absolute; bottom: 10px; left: 10px; right: 10px;display: flex; justify-content: center; z-index: 2;"><div style="display: flex; justify-content: center; gap: 6px;"><div style="background-color: #b91c1c; color: white; font-size: 12px; padding: 4px 10px; border-radius: 999px; white-space: nowrap; text-align: center; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);">구토</div><div style="background-color: #b91c1c; color: white; font-size: 12px; padding: 4px 10px; border-radius: 999px; white-space: nowrap; text-align: center; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);">질식</div><div style="background-color: #b91c1c; color: white; font-size: 12px; padding: 4px 10px; border-radius: 999px; white-space: nowrap; text-align: center; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);">호흡곤란</div></div></div></div></div>
+<div class="gas_exposure_box" style="margin-top: 20px; position: relative; height: 198px;">
+<img alt="접촉 피해" src="../images/safety_emergency_symptoms.png" style="display: block; margin: 0 auto; height: 100%; width: auto; border-radius: 8px;"/>
+<!-- 좌상단 브랜드 뱃지 -->
+<div class="gas_exposure_badge" style="position: absolute;top: 0px;left: 40px;background: linear-gradient(145deg, #125b80, #0f3f5d);color: white;font-size: 13px;font-weight: 600;padding: 5px 12px;border-radius: 0 0 14px 14px;box-shadow: 0 2px 6px rgba(0,0,0,0.2);z-index: 2;letter-spacing: 0.5px;">가스 접촉 피해</div>
+</div>
+</div>
+<!-- 📦 박스1: 아코디언 2개 -->
+<div class="content-box box-1" style="margin: 24px 12px; padding: 12px; background: #ffffff;">
+<h3 style="font-size: 18px; text-align: left; margin: 0 0 20px 0; color: #4A4A4A">
+    Ⅱ. 응급조치 요령
+  </h3>
+<!-- 아코디언 1 -->
+<!-- 아코디언 2 -->
+<div class="accordion">
+<div class="accordion-header"><div style="display: flex; align-items: center;"><svg fill="currentColor" height="16" style="margin-right: 8px; flex-shrink: 0;" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"> <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="currentColor"></path> <g transform="translate(7 8)"> <rect fill="#fff" height="8" width="2" x="4" y="0"></rect> <rect fill="#fff" height="2" width="10" x="0" y="3"></rect> </g></svg><span style="flex: 1;">응급조치 요령</span></div><span class="arrow">▼</span></div>
+<div class="accordion-panel">
+<ul>
+<li>즉시 신선한 공기를 흡입합니다.</li>
+<li>오염된 의복을 벗기고 피부를 비누와 물로 씻어냅니다.</li>
+<li>동상 부위는 문지르거나 물로 씻지 않습니다.</li>
+<li>섭취 시 입안 세척 후 암모니아의 경우 많은 양의 물 또는 우유, 염소의 경우 많은 양의 물을 마십니다.</li>
+<li>즉시 의사에게 진료 받아야합니다.</li>
+</ul>
+</div>
+</div>
+<div class="accordion">
+<div class="accordion-header"><div style="display: flex; align-items: center;"><svg fill="currentColor" height="16" style="margin-right: 8px; flex-shrink: 0;" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"> <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"></path></svg><span style="flex: 1;">누출 시 대처법</span></div><span class="arrow">▼</span></div>
+<div class="accordion-panel">
+<ul>
+<li>호흡을 중지하고 손수건 등으로 코와 입을 막습니다.</li>
+<li>화기 사용을 즉시 중지하여 점화원(불꽃, 화재 위험)을 제거합니다.</li>
+<li>방독 마스크나 공기호흡기 등 보호구를 착용한 2인 이상 작업원이 신속한 조치를 취해야 합니다.</li>
+<li>누출되는 가스 속으로 들어가지 않습니다. (중독에 의한 질식, 화재 · 폭발 시 화염에 의한 상해 우려)</li>
+<li>가스의 확산상태 및 풍향을 확인하고 바람이 불어오는 방향으로 대피 해야합니다.</li>
+<li>위치, 장소, 피해내용, 인원수 등을 정확히 파악하여 한국가스안전공사, 경찰, 소방서에 신고합니다.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- 📦 박스1 끝 -->
+ <div class="content-box-title" style="margin: 24px 12px 12px 12px;">
+<h3 style="font-size: 18px; text-align: left; margin: 20px 12px; color: #4A4A4A">
+  Ⅲ. 누출 가스별 대응요령
+</h3>
+ </div>
+<div class="content-box-2" style="margin: 8px 16px 50px 16px; padding: 20px; background: #ffffff; border-radius: 12px;  box-shadow: 0 6px 16px rgba(0,0,0,0.18); min-height: auto">
+<div class="gas-tab-scroll-wrapper">
+<div class="gas-tab-group-slide">
+<div class="tab-item active" data-target="ammonia">암모니아</div>
+<div class="tab-item" data-target="acetylene">아세틸렌</div>
+<div class="tab-item" data-target="hydrogen">수소</div>
+<div class="tab-item" data-target="lng"><strong>LNG</strong></div>
+<div class="tab-item" data-target="lpg"><strong>LPG</strong></div>
+</div>
+</div>
+<div class="swiper gas-swiper" style="margin-top: 8px;">
+<div class="swiper-wrapper">
+<div class="swiper-slide">
+<div class="gas-card" data-gas="ammonia" style="border: 1px solid #ccc; border-radius: 8px; overflow: hidden; padding: 0; margin-top: 4px;; display: block"><div class="info-card-title" style="background-color: #3b7fa8; color: white; font-weight: bold; padding: 12px 16px;font-size: 16px;; border-top-left-radius: 8px; border-top-right-radius: 8px;">
+    암모니아 (NH₃) 누출 시 대응
+  </div><div class="card-body" style="padding: 12px 16px; font-size: 14px; line-height: 1.8;">
+<div><strong>[가스 누출]</strong></div>
+<ul style="padding-left: 18px; margin-top: 4px;">
+<li>방독면 등 보호구 착용 및 주의 화기차단</li>
+<li>누출부위에 접근할 때는 바람을 등지고 접근</li>
+<li>옥내 누출 시 옥외로 반출하여 조치</li>
+<li>대량누출 시 물을 살수해 흡수·중화하고, 이송설비로 중화설비에 전달</li>
+</ul>
+<div style="margin-top: 12px;"><strong>[액상 누출]</strong></div>
+<ul style="padding-left: 18px; margin-top: 4px;">
+<li>용기가 누어있을 경우, 세워서 조치</li>
+<li>신속히 물을 살수하여 흡수·중화</li>
+</ul>
+</div></div>
+</div>
+<div class="swiper-slide">
+<div class="gas-card" data-gas="acetylene" style=" border: 1px solid #ccc; border-radius: 8px; overflow: hidden; padding: 0; margin-top: 4px;; display: none">
+<div style="background-color: #3b7fa8; color: white; font-weight: bold; padding: 12px 16px; font-size: 16px;; border-top-left-radius: 8px; border-top-right-radius: 8px;">
+    아세틸렌 (C₂H₂) 누출 시 대응
+  </div>
+<div style="padding: 12px 16px; font-size: 14px; line-height: 1.8;">
+<div><strong>[용기 및 주변기기 누출]</strong></div>
+<ul style="padding-left: 18px; margin-top: 4px;">
+<li>용기밸브와 압력조정기 사이 누출<div style="text-indent: -0.4em; padding-left: 0.4em; line-height: 1.8;"><span style="display: inline-block; width: 0.4em; ">-</span>용기밸브를 막고 패킹을 조심스럽게 조임</div></li>
+<li>밸브의 스핀들 부위 누출<div style="text-indent: -0.4em; padding-left: 0.4em; line-height: 1.8;"><span style="display: inline-block; width: 0.4em; ">-</span>용기밸브를 막고 조심히 조임</div></li>
+<li>용기밸브를 막고, 호스밴드 사용하여 고정</li>
+</ul>
+<div style="margin-top: 12px;"><strong>[안전밸브 방출]</strong></div>
+<ul style="padding-left: 18px; margin-top: 4px;">
+<li>용기를 통풍이 양호한 옥외로 옮기고, 비상연락망에 따라 연락하고 지시에 따름</li>
+<li>밸브의 스핀들 부위에서 누출되는 경우는 용기밸브를 막고 조심스럽게 더 조임</li>
+</ul>
+<div style="margin-top: 12px;"><strong>[용기, 배관류에 가스누출·연화]</strong></div>
+<ul style="padding-left: 18px; margin-top: 4px;">
+<li>연소하고 있는 용기를 취급할 때 우선 최초로 고려해야 할 것은 그 물질을 소화할 수 있는 상태일 것인지</li>
+<li>소화하는 사람들이 위험을 당할 염려가 없이 대피 시킬 것인가 등을 냉정하게 판단하여 조치</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="swiper-slide">
+<div class="gas-card" data-gas="hydrogen" style=" border: 1px solid #ccc; border-radius: 8px; overflow: hidden; padding: 0; margin-top: 4px;; display: none">
+<div style="background-color: #3b7fa8; color: white; font-weight: bold; padding: 12px 16px; font-size: 16px;; border-top-left-radius: 8px; border-top-right-radius: 8px;">
+    수소 (H₂) 누출 시 대응
+  </div>
+<div style="padding: 12px 16px; font-size: 14px; line-height: 1.8;">
+<ul style="padding-left: 18px; margin-top: 4px;">
+<li>화재에 대비해 분말·탄산가스소화기, 살수장치 등 준비</li>
+<li>분출가스가 착화된 경우, 석면포 등으로 덮어 과열방지 및 화재진압</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="swiper-slide">
+<div class="gas-card" data-gas="lng" style=" border: 1px solid #ccc; border-radius: 8px; overflow: hidden; padding: 0; margin-top: 4px;; display: none">
+<div style="background-color: #3b7fa8; color: white; font-weight: bold; padding: 12px 16px; font-size: 16px;; border-top-left-radius: 8px; border-top-right-radius: 8px;">
+    LNG 누출 시 대응
+  </div>
+<div style="padding: 12px 16px; font-size: 14px; line-height: 1.8;">
+<div><strong>[가스 누출]</strong></div>
+<ul style="padding-left: 18px; margin-top: 4px;">
+<li>즉시 밸브를 잠그고 출입 및 화기사용금지</li>
+<li>연소기 사용 중지</li>
+<li>소량 누출 시<div style="text-indent: -0.4em; padding-left: 0.4em; line-height: 1.8;"><span style="display: inline-block; width: 0.4em; ">-</span>누출부위 확인 후 고무튜브 등으로 응급조치</div></li>
+<li>대량 누출 시<div style="text-indent: -0.4em; padding-left: 0.4em; line-height: 1.8;"><span style="display: inline-block; width: 0.4em; ">-</span>주변 사람들을 안전한 장소로 대피</div></li>
+</ul>
+<div style="margin-top: 12px;"><strong>[정압기 압력의 비정상적인 상승]</strong></div>
+<ul style="padding-left: 18px; margin-top: 4px;">
+<li>주 밸브를 신속히 차단</li>
+<li>가스 방출 시 화기사용 금지, 신속히 대피</li>
+</ul>
+<div style="margin-top: 12px;"><strong>[인화 되었을 경우]</strong></div>
+<ul style="padding-left: 18px; margin-top: 4px;">
+<li>주 밸브를 잡고 소화기나 물로 화기 진압</li>
+<li>사람들을 대피</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="swiper-slide">
+<div class="gas-card" data-gas="lpg" style=" border: 1px solid #ccc; border-radius: 8px; overflow: hidden; padding: 0; margin-top: 4px;; display: none">
+<div style="background-color: #3b7fa8; color: white; font-weight: bold; padding: 12px 16px; font-size: 16px;; border-top-left-radius: 8px; border-top-right-radius: 8px;">
+    LPG 누출 시 대응
+  </div>
+<div style="padding: 12px 16px; font-size: 14px; line-height: 1.8;">
+<div><strong>[저장탱크(소형)에서 가스 누출]</strong></div>
+<ul style="padding-left: 18px; margin-top: 4px;">
+<li>소량 누출 시<div style="text-indent: -0.4em; padding-left: 0.4em; line-height: 1.8;"><span style="display: inline-block; width: 0.4em; ">-</span>화기사용 금지, 누출가스 확산방지 후 목적, 난전 등으로 응급조치</div></li>
+<li>대량 누출 시<div style="text-indent: -0.4em; padding-left: 0.4em; line-height: 1.8;"><span style="display: inline-block; width: 0.4em; ">-</span>사용 중지, 부근 화기 및 출입 금지, 정확한 누출부위 확인 후 조치, 불가 시 냉각하며 화재 제어</div></li>
+</ul>
+<div style="margin-top: 12px;"><strong>[배관 및 용기집합단에서 가스 누출]</strong></div>
+<ul style="padding-left: 18px; margin-top: 4px;">
+<li>즉시 밸브를 잠그고 출입 및 화기사용금지</li>
+<li>검지기, 비눗물 등으로 누출부위를 확인하여 고무튜브 등으로 응급조치</li>
+<li>밸브와 용기의 부착부, 조임기의 부착부, 호스 및 연결부 등에 누출 시 용기밸브를 잠그고 누출부위를 더 조이든지, 패킹을 넣고 다시 조임</li>
+</ul>
+<div style="margin-top: 12px;"><strong>[저장탱크(소형) 및 용기집합단에서 안전밸브 방출]</strong></div>
+<ul style="padding-left: 18px; margin-top: 4px;">
+<li>신속히 사용 중지, 주변의 화기사용 및 출입금지</li>
+<li>가스가 체류하지 않도록 통풍시킴</li>
+<li>내부압력이 상승된 경우이므로 살수하여 냉각</li>
+</ul>
+<div style="margin-top: 12px;"><strong>[인화 되었을 경우]</strong></div>
+<ul style="padding-left: 18px; margin-top: 4px;">
+<li>신속히 사용 중지 및 살수</li>
+<li>저장탱크가 10분 이상 화염에 휘말렸을 경우<br/>- 폭발 위험이 있어 사람들을 대피시킴</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="swiper-pagination"></div>
+</div>
+</div>
+<script src="../scripts/safety_emergency.js"></script>
+</body>
+</html>
