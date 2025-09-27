@@ -1,8 +1,9 @@
 // scripts/chatbot/chatbotInit.js
 // 챗봇 초기화 및 이벤트 연결 담당
 
-import { ChatbotCore } from './chatbotCore.js';
-import { ChatbotUI } from './chatbotUI.js';
+import { ChatbotCore } from '/scripts/chatbot/chatbotCore.js';
+import { ChatbotUI } from '/scripts/chatbot/chatbotUI.js';
+import { QnaStore } from '/scripts/chatbot/qnaStore.js';
 
 export class ChatbotManager {
   constructor() {
@@ -317,13 +318,11 @@ export class ChatbotManager {
   }
 }
 
-// 전역 초기화
-document.addEventListener('DOMContentLoaded', () => {
-  // 기존 common_chatbot.js와의 충돌 방지
-  if (!window.chatbotManager) {
-    window.chatbotManager = new ChatbotManager();
-  }
-});
+// 전역 초기화 (즉시 실행)
+if (!window.chatbotManager) {
+  window.chatbotManager = new ChatbotManager();
+  console.log('[ChatbotInit] chatbotManager 전역 등록 완료');
+}
 
 // 개발자 도구용 전역 함수들
 window.chatbotDebug = {
