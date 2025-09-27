@@ -65,6 +65,11 @@
                     initScript.type = 'module';
                     initScript.src = '../scripts/chatbot/chatbotInit.js';
                     
+                    // V2 로딩 성공 시 로그만 출력
+                    initScript.onload = function() {
+                        console.log('[V2] 로딩 성공');
+                    };
+                    
                     // V2 로딩 실패 시 기본 기능 유지
                     initScript.onerror = function() {
                         console.warn('V2 초기화 실패, 기본 기능만 사용');
@@ -275,20 +280,58 @@
                 if (!text) return;
                 
                 console.log('[기본모드] 사용자 입력:', text);
-                
-                // 사용자 메시지 추가
-                const userMsg = createBasicMessage("user", text);
-                appendBasicMessage(userMsg);
-                inputBox.value = "";
+                inputBox.value = ""; // 입력창 먼저 초기화
                 
                 // V2가 초기화되었는지 확인
                 if (window.chatbotManager && window.chatbotManager.getStatus().initialized) {
                     console.log('[기본모드] V2로 전환하여 처리');
-                    // V2가 있으면 V2로 처리 (이미 사용자 메시지는 추가됨)
+                    
+                    // 사용자 메시지 즉시 표시 (UX 개선)
+                    const userMsg = createBasicMessage("user", text);
+                    appendBasicMessage(userMsg);
+                    
+                    // 로딩 표시 (단순화)
+                    const stream = document.getElementById("chatbot-stream");
+                    if (stream) {
+                        const loadingDiv = document.createElement('div');
+                        loadingDiv.className = 'chatbot-message bot loading-message';
+                        loadingDiv.innerHTML = `
+                            <img src="../images/icon_chatbot.png" alt="챗봇" class="chatbot-avatar">
+                            <div class="chatbot-content">
+                                <div class="chatbot-bubble bot">💭 답변 준비 중...</div>
+                            </div>
+                        `;
+                        stream.appendChild(loadingDiv);
+                        
+                        // 스크롤 보정 (성능 최적화)
+                        const scroller = document.querySelector('.chatbot-body');
+                        if (scroller) {
+                            requestAnimationFrame(() => {
+                                scroller.scrollTop = scroller.scrollHeight;
+                            });
+                        }
+                    }
+                    
+                    // V2로 처리 (사용자 메시지와 로딩은 이미 표시됨)
+                    window.chatbotManager.handleInput(text, { 
+                        skipUserMessage: true, 
+                        skipLoading: true 
+                    }).then(() => {
+                        // 로딩 메시지 제거
+                        const loadingElements = document.querySelectorAll('.loading-message');
+                        loadingElements.forEach(el => el.remove());
+                    });
                     return;
                 }
                 
-                // V2가 없으면 기본 응답
+                // V2가 없으면 기본모드로 처리
+                console.log('[기본모드] V2 없음, 기본모드로 처리');
+                
+                // 사용자 메시지 추가
+                const userMsg = createBasicMessage("user", text);
+                appendBasicMessage(userMsg);
+                
+                // 기본 응답
                 setTimeout(() => {
                     const botMsg = createBasicMessage("bot", 
                         "⚠️ 챗봇 시스템을 로딩 중입니다.\n잠시 후 다시 시도해주세요."
