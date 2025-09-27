@@ -1,180 +1,32 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>고압가스 특정설비 정보센터</title>
-    <link rel="stylesheet" href="styles/home_styles.css">
-    <link rel="stylesheet" href="styles/common_chatbot.css">
+    <meta http-equiv="refresh" content="0; url=pages/home.html" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f5f5f5;
+        }
+        .loading {
+            color: #666;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="page-title">특정설비 QR 정보조회</div>
-
-        <div style="text-align: center; margin: 16px 0;">
-            <img src="images/home_logo.png" alt="로고" style="width: 220px; max-width: 80%; height: auto;" />
-        </div>
-
-        <div class="search-box-bar-naver" style="margin: 20px 16px 0 16px; border: 1px solid #4A90E2;">
-            <input autocomplete="off" id="searchInput" placeholder="QR 번호 또는 관리번호를 입력하세요." type="text"/>
-            <button id="clearButton" style="position:absolute; right:60px; background:none; border:none; font-size:18px; color:#aaa; display:none; cursor:pointer;">✕</button>
-            <button onclick="search()" style="background:none; border:none; padding:0; cursor:pointer;">
-                <svg fill="none" height="28" stroke="#4A90E2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" style="background:none; box-shadow:none;" viewbox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
-                    <path d="m21 21-4.34-4.34"></path>
-                    <circle cx="11" cy="11" r="8"></circle>
-                </svg>
-            </button>
-        </div>
-
-        <div id="recent-searches-container" style="margin: 4px 16px 0 16px; background: white; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); font-size: 14px; display: none; overflow: hidden;">
-            <ul id="recent-searches-list" style="list-style: none; margin: 0; padding: 8px 0;"></ul>
-            <div style="border-top: 1px solid #eee; padding: 6px 10px; display: flex; justify-content: space-between;">
-                <span onclick="clearRecentSearches()" style="color:#1472b6; cursor:pointer;">전체 삭제</span>
-                <span onclick="hideRecentSearches()" style="color:#999; cursor:pointer;">최근검색어 닫기</span>
-            </div>
-        </div>
+    <div class="loading">
+        <h2>고압가스 특정설비 정보센터</h2>
+        <p>페이지를 로드하고 있습니다...</p>
+        <p>자동으로 이동되지 않으면 <a href="pages/home.html">여기를 클릭</a>하세요.</p>
     </div>
-
-    <!-- 챗봇 컴포넌트 로드 -->
-    <div id="chatbot-container"></div>
     
-    <!-- 공통 컴포넌트 로드 -->
-    <script src="scripts/common_loader.js"></script>
-    
-    <script src="scripts/home_script.js"></script>
     <script>
-        // 챗봇 컴포넌트 로드
-        fetch('components/chatbot.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('chatbot-container').innerHTML = html;
-                
-                // DOM 삽입 후 잠시 대기
-                setTimeout(() => {
-                    // 우선 기본 패널 이벤트 바인딩 (즉시 작동 보장)
-                    setupBasicPanelEvents();
-                    
-                    // 기본 웰컴카드 즉시 렌더링
-                    renderBasicWelcomeCards();
-                    
-                    // 기본 입력 이벤트 바인딩 (즉시 작동 보장)
-                    setupBasicInputEvents();
-                    
-                    // 그 다음 V2 시스템 로드
-                    const qnaStoreScript = document.createElement('script');
-                    qnaStoreScript.src = 'scripts/chatbot/qnaStore.js';
-                    qnaStoreScript.onload = function() {
-                        const initScript = document.createElement('script');
-                        initScript.type = 'module';
-                        initScript.src = 'scripts/chatbot/chatbotInit.js';
-                        
-                        // V2 로딩 실패 시 기본 기능 유지
-                        initScript.onerror = function() {
-                            console.warn('V2 초기화 실패, 기본 기능만 사용');
-                        };
-                        
-                        document.head.appendChild(initScript);
-                    };
-                    document.head.appendChild(qnaStoreScript);
-                }, 100); // 100ms 대기 후 실행
-            })
-            .catch(error => console.error('챗봇 컴포넌트 로드 실패:', error));
-
-        // 간단한 비밀번호 (실제로는 더 복잡하게 설정)
-        const TEST_PASSWORD = "kgs2024";
-        
-        function authenticate() {
-            const password = document.getElementById('password-input').value;
-            const errorDiv = document.getElementById('auth-error');
-            
-            if (password === TEST_PASSWORD) {
-                document.getElementById('auth-section').style.display = 'none';
-                document.getElementById('chatbot-container').style.display = 'flex';
-            } else {
-                errorDiv.textContent = '비밀번호가 올바르지 않습니다.';
-            }
-        }
-        
-        function handleAuthKeyPress(event) {
-            if (event.key === 'Enter') {
-                authenticate();
-            }
-        }
-        
-        async function sendMessage() {
-            const input = document.getElementById('message-input');
-            const message = input.value.trim();
-            
-            if (!message) return;
-            
-            // 사용자 메시지 표시
-            addMessage(message, 'user');
-            input.value = '';
-            
-            // 로딩 메시지 표시
-            const loadingId = addMessage('답변 준비 중...', 'bot', true);
-            
-            try {
-                // API 호출
-                const response = await fetch('/api/chat', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ message: message })
-                });
-                
-                const data = await response.json();
-                
-                // 로딩 메시지 제거
-                removeMessage(loadingId);
-                
-                if (data.status && data.status.code === '20000') {
-                    // 성공 응답
-                    addMessage(data.result.message.content, 'bot');
-                } else {
-                    // 오류 응답
-                    addMessage('⚠️ 오류: ' + (data.status?.message || '알 수 없는 오류'), 'bot');
-                }
-                
-            } catch (error) {
-                // 로딩 메시지 제거
-                removeMessage(loadingId);
-                
-                console.error('API 호출 오류:', error);
-                addMessage('⚠️ 서버와 연결할 수 없습니다.', 'bot');
-            }
-        }
-        
-        function addMessage(text, type, isLoading = false) {
-            const messagesContainer = document.getElementById('chatbot-messages');
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `message ${type}-message`;
-            messageDiv.textContent = text;
-            
-            if (isLoading) {
-                messageDiv.className += ' loading';
-                messageDiv.id = 'loading-' + Date.now();
-            }
-            
-            messagesContainer.appendChild(messageDiv);
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-            
-            return messageDiv.id;
-        }
-        
-        function removeMessage(messageId) {
-            const message = document.getElementById(messageId);
-            if (message) {
-                message.remove();
-            }
-        }
-        
-        function handleKeyPress(event) {
-            if (event.key === 'Enter') {
-                sendMessage();
-            }
-        }
+        // 즉시 리다이렉트 (meta refresh 백업)
+        window.location.href = 'pages/home.html';
     </script>
 </body>
 </html>
