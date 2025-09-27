@@ -33,7 +33,8 @@ module.exports = async (req, res) => {
     const clovaRes = await fetch(CLOVA_URL, {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${process.env.CLOVA_API_KEY}`,
+        "X-NCP-CLOVASTUDIO-API-KEY": process.env.CLOVA_API_KEY,
+        "X-NCP-APIGW-API-KEY": process.env.NCP_ACCESS_KEY,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
