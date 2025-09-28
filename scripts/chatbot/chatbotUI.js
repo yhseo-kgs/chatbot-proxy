@@ -59,7 +59,7 @@ export class ChatbotUI {
     // 아바타 (bot 전용) - 맨 앞에 삽입
     if (message.role === 'bot') {
       const avatar = document.createElement('img');
-      avatar.src = '../images/icon_chatbot.png';
+      avatar.src = '/images/icon_chatbot.png';
       avatar.alt = '챗봇';
       avatar.classList.add('chatbot-avatar');
       wrapper.appendChild(avatar);

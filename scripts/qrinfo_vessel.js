@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const inputCode = (params.get("code") || "").toUpperCase().replace(/-/g, "");
   
-  fetch("../qr_data.json")
+  fetch("/qr_data.json")
     .then(res => res.json())
     .then(data => {
       const result = data.find(item =>
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".info_data_install_year").textContent = result.first_inspection_date ? result.first_inspection_date.split("-")[0] + "년" : "-";
         
         const mgmtPrefix = (result.mgmt_no || "").substring(0, 3).toUpperCase();
-        const imageFile = `../images/qrinfo_vessel_profile_${mgmtPrefix}.png`;
+        const imageFile = `/images/qrinfo_vessel_profile_${mgmtPrefix}.png`;
         document.querySelector(".profile-avatar img").src = imageFile;
         document.querySelector(".info_data_install_company").textContent = result.install_company || "-";
         document.querySelector(".info_data_serial_no").textContent = result.serial_no || "-";
