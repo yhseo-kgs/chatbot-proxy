@@ -11,7 +11,7 @@
       "destination": "/pages/index.html"
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!api|_next|favicon.ico|components|styles|scripts|images|data).*)",
       "destination": "/pages/$1"
     }
   ]
