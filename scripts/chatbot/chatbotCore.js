@@ -44,7 +44,7 @@ export class ChatbotCore {
     const timeoutId = setTimeout(() => controller.abort(), 10000); // 10초 타임아웃
     
     try {
-      const response = await fetch('/api/chat', {
+      const response = await fetch('/api/chat?t=' + Date.now(), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: query }),
