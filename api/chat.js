@@ -1,4 +1,9 @@
-// api/chat.js (이전 방법으로 수정)
+// api/chat.js
+// Vercel 환경변수에 다음을 등록하세요:
+// CLOVA_API_KEY       = (CLOVA Studio "서비스 앱" API 키)
+// NCP_APIGW_KEY       = (API Gateway 키)
+// CLOVA_MODEL_ID      = HCX-007 (서비스 앱과 동일하게)
+
 module.exports = async (req, res) => {
   // CORS 헤더 설정
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -7,74 +12,50 @@ module.exports = async (req, res) => {
 
   if (req.method === "OPTIONS") return res.status(200).end();
   if (req.method !== "POST") {
-    return res.status(405).json({ status: { code: "40500", message: "Method Not Allowed" } });
+    return res.status(405).json({ error: "Method Not Allowed" });
   }
 
   try {
-    // body 파싱 보장 (이전 방법)
-    const body = typeof req.body === "string" ? JSON.parse(req.body) : req.body;
-    const { message } = body ?? {};
-    
-    if (!message) {
-      return res.status(400).json({ status: { code: "40000", message: "message is required" } });
+    const { message } = typeof req.body === "string" ? JSON.parse(req.body) : req.body;
+    if (!message || typeof message !== "string") {
+      return res.status(400).json({ error: "Invalid request: message is required" });
     }
 
-    // 환경변수 확인
-    if (!process.env.CLOVA_API_KEY) {
-      console.error('CLOVA_API_KEY not found');
-      return res.status(500).json({
-        status: { code: "50000", message: "Server configuration error" }
-      });
-    }
+    const MODEL_ID = process.env.CLOVA_MODEL_ID || "HCX-007"; // 서비스앱에 맞춰 사용
+    const CLOVA_URL = `https://clovastudio.stream.ntruss.com/v3/chat-completions/${MODEL_ID}`;
 
-    // 내장 fetch 사용 (이전 방법)
-    const CLOVA_URL = "https://clovastudio.stream.ntruss.com/v3/chat-completions/HCX-007";
-    
     const clovaRes = await fetch(CLOVA_URL, {
       method: "POST",
       headers: {
-        "X-NCP-CLOVASTUDIO-API-KEY": process.env.CLOVA_API_KEY,
-        "X-NCP-APIGW-API-KEY-ID": process.env.NCP_ACCESS_KEY,
-        "X-NCP-APIGW-API-KEY": process.env.NCP_SECRET_KEY,
+        "X-NCP-CLOVASTUDIO-API-KEY": process.env.CLOVA_API_KEY,   // 서비스 앱 키
+        "X-NCP-APIGW-API-KEY": process.env.NCP_APIGW_KEY,         // API Gateway 키
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         messages: [
-          { 
-            role: "system", 
-            content: [{ 
-              type: "text", 
-              text: "당신은 한국가스안전공사 KGS의 고압가스 특정설비 검사 및 안전관리에 대한 전문적인 정보를 제공하는 AI 챗봇입니다. 정확하고 도움이 되는 정보를 제공해주세요." 
-            }] 
-          },
-          { 
-            role: "user", 
-            content: [{ 
-              type: "text", 
-              text: message 
-            }] 
-          }
+          // 시스템 프롬프트는 클로바 Studio의 작업에서 설정되어 있음
+          { role: "user", content: [{ type: "text", text: message }] }
         ],
-        thinking: { effort: "low" },
-        topP: 0.8,
-        topK: 0,
-        maxCompletionTokens: 2048,
+        // 파라미터는 최소화
         temperature: 0.5,
-        repetitionPenalty: 1.1
+        topP: 0.8,
+        topK: 20,
+        repetitionPenalty: 1.1,
+        maxCompletionTokens: 600
       })
     });
 
-    const data = await clovaRes.json();
-
-    // 응답 상태 확인
+    // 401/403 등 에러 통과 처리
     if (!clovaRes.ok) {
-      console.error('CLOVA API Error:', data);
+      const errText = await clovaRes.text();
       return res.status(clovaRes.status).json({
-        status: { code: "50000", message: "CLOVA API request failed" },
-        details: data
+        error: `CLOVA request failed: ${clovaRes.status}`,
+        detail: errText
       });
     }
 
+    const data = await clovaRes.json();
+    
     // 프론트엔드가 기대하는 구조로 매핑
     const mapped = {
       status: data.status ?? { code: "20000", message: "OK" },
@@ -88,11 +69,8 @@ module.exports = async (req, res) => {
     };
 
     return res.status(200).json(mapped);
-
-  } catch (err) {
-    console.error("CLOVA proxy error:", err);
-    return res.status(500).json({ 
-      status: { code: "50000", message: err.message } 
-    });
+  } catch (e) {
+    console.error("CLOVA proxy error:", e);
+    return res.status(500).json({ error: "Server Error", detail: String(e) });
   }
 };
