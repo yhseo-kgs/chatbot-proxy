@@ -1,7 +1,7 @@
 // scripts/chatbot/chatbotCore.js
 // 챗봇의 핵심 비즈니스 로직 담당
 
-import { rankQna, formatSearchResult } from '/scripts/chatbot/searchQna.js';
+import { rankQna, formatSearchResult } from './searchQna.js';
 
 export class ChatbotCore {
   constructor() {
@@ -44,7 +44,7 @@ export class ChatbotCore {
     const timeoutId = setTimeout(() => controller.abort(), 10000); // 10초 타임아웃
     
     try {
-      const response = await fetch('/api/chat', {
+      const response = await fetch('https://chatbot-proxy-three.vercel.app/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: query }),
