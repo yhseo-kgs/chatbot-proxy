@@ -44,7 +44,7 @@ export class ChatbotCore {
     const timeoutId = setTimeout(() => controller.abort(), 10000); // 10초 타임아웃
     
     try {
-      const response = await fetch('/api/chat?t=' + Date.now(), {
+      const response = await fetch('https://chatbot-proxy-three.vercel.app/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: query }),
