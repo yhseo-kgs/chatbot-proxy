@@ -3,10 +3,11 @@
 
 // 사이드메뉴 로드
 function loadSideMenu() {
+    // 상대 경로로 통일
     const isPagesFolder = window.location.pathname.includes('/sites/');
     const basePath = isPagesFolder ? '../' : '';
     
-    fetch(basePath + 'components/common_sidebar.html')
+    fetch('/components/common_sidebar.html')
         .then(response => response.text())
         .then(html => {
             // 사이드메뉴가 이미 있는지 확인
@@ -20,10 +21,11 @@ function loadSideMenu() {
 
 // 헤더 로드
 function loadHeader() {
+    // 상대 경로로 통일
     const isPagesFolder = window.location.pathname.includes('/sites/');
     const basePath = isPagesFolder ? '../' : '';
     
-    fetch(basePath + 'components/common_header.html')
+    fetch('/components/common_header.html')
         .then(response => response.text())
         .then(html => {
             const container = document.querySelector('.container');
@@ -36,15 +38,16 @@ function loadHeader() {
 
 // 공통 CSS 로드
 function loadCommonCSS() {
+    // 상대 경로로 통일
     const isPagesFolder = window.location.pathname.includes('/sites/');
     const basePath = isPagesFolder ? '../' : '';
     
     const cssLink = document.createElement('link');
     cssLink.rel = 'stylesheet';
-    cssLink.href = basePath + 'styles/common_layout.css';
+    cssLink.href = '/styles/common_layout.css';
     
     // 이미 로드되었는지 확인
-    const existingCSS = document.querySelector(`link[href="${basePath}styles/common_layout.css"]`);
+    const existingCSS = document.querySelector(`link[href="/styles/common_layout.css"]`);
     if (!existingCSS) {
         document.head.appendChild(cssLink);
     }
@@ -52,18 +55,19 @@ function loadCommonCSS() {
 
 // 공통 JavaScript 로드
 function loadCommonJS() {
+    // 상대 경로로 통일
     const isPagesFolder = window.location.pathname.includes('/sites/');
     const basePath = isPagesFolder ? '../' : '';
     
     return new Promise((resolve, reject) => {
-        const existingScript = document.querySelector(`script[src="${basePath}scripts/common_sidebar.js"]`);
+        const existingScript = document.querySelector(`script[src="/scripts/common_sidebar.js"]`);
         if (existingScript) {
             resolve();
             return;
         }
         
         const script = document.createElement('script');
-        script.src = basePath + 'scripts/common_sidebar.js';
+        script.src = '/scripts/common_sidebar.js';
         script.onload = resolve;
         script.onerror = reject;
         document.head.appendChild(script);
