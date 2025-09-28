@@ -1,7 +1,7 @@
 // scripts/chatbot/chatbotCore.js
 // 챗봇의 핵심 비즈니스 로직 담당
 
-import { rankQna, formatSearchResult } from './searchQna.js';
+import { rankQna, formatSearchResult } from '/scripts/chatbot/searchQna.js';
 
 export class ChatbotCore {
   constructor() {

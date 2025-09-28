@@ -4,16 +4,16 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>고압가스 특정설비 정보센터</title>
-    <link rel="stylesheet" href="../styles/common_layout.css">
-    <link rel="stylesheet" href="../styles/home_styles.css">
-    <link rel="stylesheet" href="../styles/common_chatbot.css">
+    <link rel="stylesheet" href="/styles/common_layout.css">
+    <link rel="stylesheet" href="/styles/home_styles.css">
+    <link rel="stylesheet" href="/styles/common_chatbot.css">
 </head>
 <body>
     <div class="container">
         <div class="page-title">특정설비 QR 정보조회</div>
 
         <div style="text-align: center; margin: 16px 0;">
-            <img src="../images/home_logo.png" alt="로고" style="width: 220px; max-width: 80%; height: auto;" />
+            <img src="/images/home_logo.png" alt="로고" style="width: 220px; max-width: 80%; height: auto;" />
         </div>
 
         <div class="search-box-bar-naver" style="margin: 20px 16px 0 16px; border: 1px solid #4A90E2;">
@@ -40,12 +40,12 @@
     <div id="chatbot-container"></div>
     
     <!-- 공통 컴포넌트 로드 -->
-    <script src="../scripts/common_loader.js"></script>
+    <script src="/scripts/common_loader.js"></script>
 
-    <script src="../scripts/home_script.js"></script>
+    <script src="/scripts/home_script.js"></script>
     <script>
         // 챗봇 컴포넌트 로드
-        fetch('../components/chatbot.html')
+        fetch('/components/chatbot.html')
             .then(response => response.text())
             .then(html => {
                 document.getElementById('chatbot-container').innerHTML = html;
@@ -64,7 +64,7 @@
                     // V2 시스템 로드 (모듈 방식 통일)
                     const initScript = document.createElement('script');
                     initScript.type = 'module';
-                    initScript.src = '../scripts/chatbot/chatbotInit.js';
+                    initScript.src = '/scripts/chatbot/chatbotInit.js';
                     
                     // V2 로딩 성공 시 로그만 출력
                     initScript.onload = function() {
@@ -238,7 +238,7 @@
                 // 봇 메시지면 아바타 추가
                 if (message.role === "bot") {
                     const avatar = document.createElement("img");
-                    avatar.src = "../images/icon_chatbot.png";
+                    avatar.src = "/images/icon_chatbot.png";
                     avatar.alt = "챗봇";
                     avatar.classList.add("chatbot-avatar");
                     wrapper.appendChild(avatar);
@@ -297,7 +297,7 @@
                         const loadingDiv = document.createElement('div');
                         loadingDiv.className = 'chatbot-message bot loading-message';
                         loadingDiv.innerHTML = `
-                            <img src="../images/icon_chatbot.png" alt="챗봇" class="chatbot-avatar">
+                            <img src="/images/icon_chatbot.png" alt="챗봇" class="chatbot-avatar">
                             <div class="chatbot-content">
                                 <div class="chatbot-bubble bot">💭 답변 준비 중...</div>
                             </div>

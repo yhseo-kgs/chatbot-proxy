@@ -1,9 +1,9 @@
 // scripts/chatbot/chatbotInit.js
 // 챗봇 초기화 및 이벤트 연결 담당
 
-import { ChatbotCore } from './chatbotCore.js';
-import { ChatbotUI } from './chatbotUI.js';
-import { QnaStore } from './qnaStore.js';
+import { ChatbotCore } from '/scripts/chatbot/chatbotCore.js';
+import { ChatbotUI } from '/scripts/chatbot/chatbotUI.js';
+import { QnaStore } from '/scripts/chatbot/qnaStore.js';
 
 export class ChatbotManager {
   constructor() {
