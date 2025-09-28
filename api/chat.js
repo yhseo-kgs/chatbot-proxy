@@ -1,76 +1,72 @@
-// api/chat.js
-// Vercel 환경변수에 다음을 등록하세요:
-// CLOVA_API_KEY       = (CLOVA Studio "서비스 앱" API 키)
-// NCP_APIGW_KEY       = (API Gateway 키)
-// CLOVA_MODEL_ID      = HCX-007 (서비스 앱과 동일하게)
+// /api/chat.js  (Node 18+ / Edge-런타임 아님)
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ ok: false, error: 'Method Not Allowed' });
+  }
 
-module.exports = async (req, res) => {
-  // CORS 헤더 설정
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  const {
+    CLOVA_API_KEY,
+    NCP_APIGW_KEY,
+    CLOVA_MODEL_ID = 'HCX-007', // 기본값 007
+  } = process.env;
 
-  if (req.method === "OPTIONS") return res.status(200).end();
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method Not Allowed" });
+  const missing = [];
+  if (!CLOVA_API_KEY) missing.push('CLOVA_API_KEY');
+  if (!NCP_APIGW_KEY) missing.push('NCP_APIGW_KEY');
+  if (!CLOVA_MODEL_ID) missing.push('CLOVA_MODEL_ID');
+
+  if (missing.length) {
+    return res.status(401).json({
+      ok: false,
+      where: 'proxy/env',
+      reason: 'missing_env',
+      missing,
+      hint: 'Vercel > Project > Settings > Environment Variables (Production) 에 값 넣고 Redeploy',
+    });
   }
 
   try {
-    const { message } = typeof req.body === "string" ? JSON.parse(req.body) : req.body;
-    if (!message || typeof message !== "string") {
-      return res.status(400).json({ error: "Invalid request: message is required" });
+    const { message } = req.body || {};
+    if (!message) {
+      return res.status(400).json({ ok: false, error: 'message is required' });
     }
 
-    const MODEL_ID = "HCX-007"; // 고정
-    const CLOVA_URL = `https://clovastudio.stream.ntruss.com/v3/chat-completions/${MODEL_ID}`;
-
-    const clovaRes = await fetch(CLOVA_URL, {
-      method: "POST",
+    // 클로바 엔드포인트 (서비스앱 인퍼런스 API)
+    const url = 'https://clovastudio.apigw.ntruss.com/testapp/v1/chat-completions';
+    const resp = await fetch(url, {
+      method: 'POST',
       headers: {
-        "X-NCP-CLOVASTUDIO-API-KEY": process.env.CLOVA_API_KEY,   // 서비스 앱 키
-        "X-NCP-APIGW-API-KEY": process.env.NCP_APIGW_KEY,         // API Gateway 키
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json; charset=utf-8',
+        'X-NCP-APIGW-API-KEY': NCP_APIGW_KEY,
+        'X-ClovaAI-Api-Key': CLOVA_API_KEY,
       },
       body: JSON.stringify({
-        messages: [
-          // 시스템 프롬프트는 클로바 Studio의 작업에서 설정되어 있음
-          { role: "user", content: [{ type: "text", text: message }] }
-        ],
-        // 파라미터는 최소화
-        temperature: 0.5,
-        topP: 0.8,
-        topK: 20,
-        repetitionPenalty: 1.1,
-        maxCompletionTokens: 600
-      })
+        model: CLOVA_MODEL_ID, // HCX-007 등
+        messages: [{ role: 'user', content: message }],
+        temperature: 0.2,
+      }),
     });
 
-    // 401/403 등 에러 통과 처리
-    if (!clovaRes.ok) {
-      const errText = await clovaRes.text();
-      return res.status(clovaRes.status).json({
-        error: `CLOVA request failed: ${clovaRes.status}`,
-        detail: errText
+    // 업스트림이 실패하면 상세를 그대로 전달
+    if (!resp.ok) {
+      const text = await resp.text().catch(() => '');
+      return res.status(resp.status).json({
+        ok: false,
+        where: 'upstream/clova',
+        status: resp.status,
+        statusText: resp.statusText,
+        model: CLOVA_MODEL_ID,
+        hint:
+          resp.status === 401 || resp.status === 403
+            ? 'Service App의 모델/키/권한 확인 (모델 ID가 프로젝트와 일치하는지, Service App이 사용 상태인지)'
+            : '요청 포맷/쿼터/일시적 오류 확인',
+        upstream: text?.slice(0, 4000), // 안전하게 일부만
       });
     }
 
-    const data = await clovaRes.json();
-    
-    // 프론트엔드가 기대하는 구조로 매핑
-    const mapped = {
-      status: data.status ?? { code: "20000", message: "OK" },
-      result: {
-        message: {
-          role: data.result?.message?.role || "assistant",
-          content: data.result?.message?.content || "",
-          thinkingContent: data.result?.message?.thinkingContent || null
-        }
-      }
-    };
-
-    return res.status(200).json(mapped);
+    const data = await resp.json();
+    return res.status(200).json({ ok: true, data });
   } catch (e) {
-    console.error("CLOVA proxy error:", e);
-    return res.status(500).json({ error: "Server Error", detail: String(e) });
+    return res.status(500).json({ ok: false, where: 'proxy', error: String(e) });
   }
-};
+}
