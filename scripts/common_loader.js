@@ -3,10 +3,6 @@
 
 // 사이드메뉴 로드
 function loadSideMenu() {
-    // 상대 경로로 통일
-    const isPagesFolder = window.location.pathname.includes('/sites/');
-    const basePath = isPagesFolder ? '../' : '';
-    
     fetch('/components/common_sidebar.html')
         .then(response => response.text())
         .then(html => {
@@ -21,10 +17,6 @@ function loadSideMenu() {
 
 // 헤더 로드
 function loadHeader() {
-    // 상대 경로로 통일
-    const isPagesFolder = window.location.pathname.includes('/sites/');
-    const basePath = isPagesFolder ? '../' : '';
-    
     fetch('/components/common_header.html')
         .then(response => response.text())
         .then(html => {
@@ -38,10 +30,6 @@ function loadHeader() {
 
 // 공통 CSS 로드
 function loadCommonCSS() {
-    // 상대 경로로 통일
-    const isPagesFolder = window.location.pathname.includes('/sites/');
-    const basePath = isPagesFolder ? '../' : '';
-    
     const cssLink = document.createElement('link');
     cssLink.rel = 'stylesheet';
     cssLink.href = '/styles/common_layout.css';
@@ -55,10 +43,6 @@ function loadCommonCSS() {
 
 // 공통 JavaScript 로드
 function loadCommonJS() {
-    // 상대 경로로 통일
-    const isPagesFolder = window.location.pathname.includes('/sites/');
-    const basePath = isPagesFolder ? '../' : '';
-    
     return new Promise((resolve, reject) => {
         const existingScript = document.querySelector(`script[src="/scripts/common_sidebar.js"]`);
         if (existingScript) {
