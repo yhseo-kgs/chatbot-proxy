@@ -3,7 +3,7 @@
 
 // 사이드메뉴 로드
 function loadSideMenu() {
-    const isPagesFolder = window.location.pathname.includes('/pages/');
+    const isPagesFolder = window.location.pathname.includes('/sites/');
     const basePath = isPagesFolder ? '../' : '';
     
     fetch(basePath + 'components/common_sidebar.html')
@@ -20,7 +20,7 @@ function loadSideMenu() {
 
 // 헤더 로드
 function loadHeader() {
-    const isPagesFolder = window.location.pathname.includes('/pages/');
+    const isPagesFolder = window.location.pathname.includes('/sites/');
     const basePath = isPagesFolder ? '../' : '';
     
     fetch(basePath + 'components/common_header.html')
@@ -36,7 +36,7 @@ function loadHeader() {
 
 // 공통 CSS 로드
 function loadCommonCSS() {
-    const isPagesFolder = window.location.pathname.includes('/pages/');
+    const isPagesFolder = window.location.pathname.includes('/sites/');
     const basePath = isPagesFolder ? '../' : '';
     
     const cssLink = document.createElement('link');
@@ -52,7 +52,7 @@ function loadCommonCSS() {
 
 // 공통 JavaScript 로드
 function loadCommonJS() {
-    const isPagesFolder = window.location.pathname.includes('/pages/');
+    const isPagesFolder = window.location.pathname.includes('/sites/');
     const basePath = isPagesFolder ? '../' : '';
     
     return new Promise((resolve, reject) => {

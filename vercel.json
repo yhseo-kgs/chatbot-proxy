@@ -1,10 +1,20 @@
 {
   "version": 2,
+  "functions": {
+    "api/chat.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
   "redirects": [
+    {
+      "source": "/",
+      "destination": "/sites/home.html"
+    },
     {
       "source": "/pages/(.*)",
       "destination": "/sites/$1",
       "permanent": true
     }
-  ]
+  ],
+  "cleanUrls": true
 }
