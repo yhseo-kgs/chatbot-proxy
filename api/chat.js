@@ -21,7 +21,7 @@ module.exports = async (req, res) => {
       return res.status(400).json({ error: "Invalid request: message is required" });
     }
 
-    const MODEL_ID = process.env.CLOVA_MODEL_ID || "HCX-007"; // 서비스앱에 맞춰 사용
+    const MODEL_ID = "HCX-007"; // 고정
     const CLOVA_URL = `https://clovastudio.stream.ntruss.com/v3/chat-completions/${MODEL_ID}`;
 
     const clovaRes = await fetch(CLOVA_URL, {
