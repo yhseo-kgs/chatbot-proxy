@@ -1,5 +1,5 @@
 // /api/chat.js
-export default async function handler(req, res) {
+module.exports = async (req, res) => {
   if (req.method !== 'POST') return res.status(405).json({ ok:false, error:'Method Not Allowed' });
 
   const { CLOVA_API_KEY, NCP_APIGW_KEY, CLOVA_MODEL_ID='HCX-007' } = process.env;
@@ -41,4 +41,4 @@ export default async function handler(req, res) {
   } catch (e) {
     return res.status(500).json({ ok:false, where:'proxy', error:String(e) });
   }
-}
+};
