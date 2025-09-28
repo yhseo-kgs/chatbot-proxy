@@ -11,20 +11,8 @@
       "destination": "/sites/home.html"
     },
     {
-      "source": "/styles/(.*)",
-      "destination": "/styles/$1"
-    },
-    {
-      "source": "/scripts/(.*)",
-      "destination": "/scripts/$1"
-    },
-    {
-      "source": "/components/(.*)",
-      "destination": "/components/$1"
-    },
-    {
-      "source": "/images/(.*)",
-      "destination": "/images/$1"
+      "source": "/(.*)",
+      "destination": "/$1"
     }
   ]
 }
