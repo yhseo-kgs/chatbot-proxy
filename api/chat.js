@@ -23,7 +23,7 @@ module.exports = async (req, res) => {
     if (!message) return res.status(400).json({ ok:false, error:'message required' });
 
     // 서비스 키 방식: stream 엔드포인트 + Authorization Bearer 헤더
-    const url = `https://clovastudio.stream.ntruss.com/v1/chat-completions/${CLOVA_MODEL_ID}`;
+    const url = `https://clovastudio.stream.ntruss.com/v3/chat-completions/${CLOVA_MODEL_ID}`;
     
     const upstream = await fetch(url, {
       method:'POST',
