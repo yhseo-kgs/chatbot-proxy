@@ -1,0 +1,1570 @@
+[
+  {
+    "id_qna": 1,
+    "category_qna": "법·기준 안내",
+    "question_qna": "특정설비가 뭐예요?",
+    "answer_qna": "특정설비는 「고압가스안전관리법」에서 정한 고압가스 관련 주요 설비를 말합니다.\n대표적으로 압력용기, 안전밸브·긴급차단장치·역화방지장치, 기화장치, 자동차용 가스주입기, 독성가스 밸브, 냉동용 특정설비, 실린더 캐비닛, CNG 충전설비, 잔류가스 회수장치, 차량 고정탱크 등 10종을 포함합니다.",
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 2,
+    "category_qna": "법·기준 안내",
+    "question_qna": "특정설비는 아무 업체나 제조할 수 있나요?",
+    "answer_qna": "특정설비는 「고압가스안전관리법」 제5조에 따라 등록된 업체만 제조할 수 있습니다.",
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 3,
+    "category_qna": "법·기준 안내",
+    "question_qna": "특정설비 수리는 누가 할 수 있나요?",
+    "answer_qna": "특정설비 수리는 아무 업체나 할 수 없으며, 「고압가스안전관리법」 제35조에 따라 정해진 자격을 가진 업체만 가능합니다.\n대표적으로 고압가스 제조허가자, 특정설비제조등록자 등이 있습니다.",
+    "reference_qna": null,
+    "action_qna": "관련 법령 전문 확인하기"
+  },
+  {
+    "id_qna": 4,
+    "category_qna": "법·기준 안내",
+    "question_qna": "특정설비 제조등록이 된 업체인지 어떻게 확인하나요?",
+    "answer_qna": "특정설비 제조등록 여부는 챗봇에서 직접 확인할 수 없으며, 관련 지사에 문의하시기 바랍니다.",
+    "reference_qna": null,
+    "action_qna": "관련지사 번호찾기"
+  },
+  {
+    "id_qna": 5,
+    "category_qna": "법·기준 안내",
+    "question_qna": "압력용기는 설치할 때 어떤 법에 따라 관리되나요?",
+    "answer_qna": "고압가스 취급·저장·제조는 고압가스안전관리법(시행령/시행규칙) + KGS 코드 기준을 따릅니다.",
+    "reference_qna": "AC111 압력용기 정의: 액화가스 0.2MPa 이상, 압축가스 1MPa 이상, 고법 예외대상 7가지 규정 있음",
+    "action_qna": null
+  },
+  {
+    "id_qna": 6,
+    "category_qna": "법·기준 안내",
+    "question_qna": "압력용기의 재검사 주기는 몇 년마다인가요?",
+    "answer_qna": "압력용기의 재검사 주기는 「고압가스안전관리법 시행규칙」 별표22에 따라 4년마다 재검사를 받아야 합니다.\n또한, 법 제17조에 따라 다음과 같은 경우에도 정기주기와 상관없이 재검사를 받아야 합니다.\n1) 용기에 손상이 발생한 경우\n2) 합격표시(명판)가 훼손된 경우\n3) 충전할 가스 종류를 변경하는 경우\n따라서, 압력용기는 기본적으로 정해진 주기에 따라 재검사를 받아야 하며, 위와 같은 사유에 해당할 때는 즉시 재검사가 필요합니다.",
+    "reference_qna": null,
+    "action_qna": "1. 재검사 신청하기\n2. 재검사 대상여부 확인하기"
+  },
+  {
+    "id_qna": 7,
+    "category_qna": "법·기준 안내",
+    "question_qna": "압력용기의 최초검사와 재검사는 어떻게 다른가요?",
+    "answer_qna": "압력용기는  「고압가스안전관리법」제17조에 근거하여, 제작당시와 설치 이후 사용 중에 각각 검사를 받아야 하며, 이 둘은 성격과 목적이 다릅니다.\n\n1. 최초검사\n 1) 대상: 새로 제작되었거나 수입된 압력용기\n 2) 시점: 설치 및 사용 개시 전에 실시\n 3) 주요 내용: 설계도서 검토, 제작검사(재료, 용접, 비파괴검사 등), 최종 내압시험\n4) 적용 기준: KGS AC111\n 4) 목적: 압력용기가 법령과 기준(AC111, KGS Code 등)에 맞게 제작되었는지, 안전하게 사용할 수 있는지를 확인\n\n2. 재검사\n 1) 대상: 사용 중인 압력용기\n 2) 시점: 정기 주기(예: 4년/5년/1년 등) 또는 법 제17조에 따른 필요 시점\n 3) 주요 내용: 두께측정, 외관검사, 비파괴검사, 필요시 내압시험\n 4) 목적: 장기간 사용하면서 발생할 수 있는 손상·부식·열화 등을 점검하여 계속 사용 가능 여부를 판단\n\n👉 정리하면,\n\n최초검사 = 법적근거에 맞게 제작하였는지 확인, 제작품질 확인\n재검사 = 사용 중 건전성 확인",
+    "reference_qna": "법제17조제1항: 최초검사\n법제17조제2항: 재검사\n\n고압가스안전관리법 제17조(용기등의 검사) \n① 용기등을 제조ㆍ수리 또는 수입한 자(외국용기등 제조자를 포함한다)는 그 용기등을 판매하거나 사용하기 전에 산업통상자원부장관, 시장ㆍ군수 또는 구청장의 검사를 받아야 한다. 다만, 대통령령으로 정하는 용기등에 대하여는 그 검사의 전부 또는 일부를 생략할 수 있다.\n\n② 제1항에 따른 검사를 받은 후 용기나 특정설비가 다음 각 호의 어느 하나에 해당하게 되면 용기나 특정설비의 소유자는 그 용기나 특정설비에 대하여 시장ㆍ군수 또는 구청장의 재검사를 받아야 한다. ",
+    "action_qna": null
+  },
+  {
+    "id_qna": 8,
+    "category_qna": "법·기준 안내",
+    "question_qna": "압력용기 제작 시 꼭 지켜야 하는 기준이 있나요? (ASME, KGS 코드 등)",
+    "answer_qna": "압력용기는 누구나 자유롭게 제작할 수 있는 일반 기계가 아니라, 법령과 기술기준에 따라 엄격히 관리되는 특정설비입니다. 제작 시 반드시 아래 기준을 따라야 합니다.\n\n고압가스안전관리법 및 시행규칙\n\n법 제5조(특정설비의 제조·검사)에 따라, 압력용기를 제조하려면 반드시 산업통상자원부장관의 등록을 받아야 합니다.\n\n등록된 업체만 제조 가능하며, 설계·제작 단계에서 검사기관의 감독을 받습니다.\n\n1) KGS 코드(한국가스안전공사 기준)\n\n「KGS AC 111」: 압력용기의 설계·제작 기준\n「KGS AC 112」: 냉동용 특정설비의 설계·제작 기준\n\n2) 국제규격 (참조 가능)\n\n「ASME Section VIII, Division 1」(압력용기 제작 국제표준)\n국내 압력용기도 기본적으로 AC 111이 ASME Div.1을 기반으로 제정되어 있어, 국제표준과 상호 연계됩니다.\n\n👉 따라서, 압력용기를 제작할 때는 고압가스안전관리법 + KGS 코드를 반드시 충족해야 하며, 필요 시 ASME 기준도 참고·적용됩니다.",
+    "reference_qna": "고압가스안전관리법 제5조(용기ㆍ냉동기 및 특정설비의 제조등록 등) \n① 용기ㆍ냉동기 또는 특정설비(이하 “용기등”이라 한다)를 제조하려는 자는 시장ㆍ군수 또는 구청장에게 등록하여야 한다.",
+    "action_qna": "KGS 규정 확인하기[사이버지사]"
+  },
+  {
+    "id_qna": 9,
+    "category_qna": "법·기준 안내",
+    "question_qna": "압력용기의 최고사용압력(MAWP)은 어느 기준으로 정해지나요?",
+    "answer_qna": "압력용기의 **최고사용압력(MAWP, Maximum Allowable Working Pressure)**은 제작 시점에서 설계조건과 재질·두께·제조방식을 고려하여 정해지며, 관련 법령(KGS AC111)과 기술기준에 따라 산정됩니다.",
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 10,
+    "category_qna": "법·기준 안내",
+    "question_qna": "압력용기를 수리해서 쓸 경우, 별도의 신고나 승인이 필요한가요?",
+    "answer_qna": "압력용기에 결함이나 이상이 발생하여 수리가 필요할 경우, 「고압가스안전관리법」 제5조 제3항에 따른 업체만 수리할 수 있습니다.\n\n또한 반드시 한국가스안전공사에 수리검사를 신청해야 하며, 절차는 다음과 같습니다:\n\n1. 공사에 수리검사 신청\n2. 관련 서류 제출\n3. 수리업체를 통한 수리 진행\n4. (용접보수 시) AC 111에 따른 내압시험 실시\n5. 검사 완료 후 합격 시 사용 가능",
+    "reference_qna": null,
+    "action_qna": "[id3]\n[id13]\n관할지사 찾기"
+  },
+  {
+    "id_qna": 11,
+    "category_qna": "법·기준 안내",
+    "question_qna": "압력용기를 다른 용도로 변경해서 쓸 수 있나요? (예: 내용물 변경)",
+    "answer_qna": "압력용기의 내용물(사용 유체) 변경은 「고압가스안전관리법」 제17조에서 정한 재검사 대상입니다.\n즉, 기존 합격 상태 그대로 임의로 다른 유체를 충전할 수 없으며, 반드시 검사기관의 재검사를 받아야 합니다.",
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 12,
+    "category_qna": "법·기준 안내",
+    "question_qna": "압력용기 검사 중 불합격이 나오면 법적으로 어떻게 해야 하나요?",
+    "answer_qna": "압력용기가 검재사에서 불합격되면 원칙적으로는 사용이 금지되며, 절단 등의 방법으로 파기하여 원형으로 복원할 수 없도록 해야 합니다. 이는 「고압가스안전관리법」시행규칙 별표 23에 따른 조치 방법입니다.\n\n따라서, 재검사 전에 사업주는 용기의 외관, 부식 상태 등을 점검하여 손상이 발견될 경우 용접보수 등 적절한 수리를 실시하고, 이후 검사에 응하시기 바랍니다.",
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 13,
+    "category_qna": "법·기준 안내",
+    "question_qna": "압력용기 수리검사는 어떻게 진행되나요?",
+    "answer_qna": "압력용기 수리검사는 「고법 시행규칙 별표 13」에 따라 신규검사와 동일 기준으로 진행됩니다.",
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 14,
+    "category_qna": "법·기준 안내",
+    "question_qna": "압력용기를 옮겨 설치할 때(이전설치) 법적으로 제한이 있나요?",
+    "answer_qna": "압력용기를 다른 장소로 옮겨 설치하려면 관할 지사 신고/허가가 필요하며,\n새 장소에서 재검사 합격 후 사용 가능합니다.",
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 15,
+    "category_qna": "법·기준 안내",
+    "question_qna": "압력용기 내압시험 대신 다른 시험으로 대체할 수 있나요?",
+    "answer_qna": "압력용기 제작 단계에서는 내압시험을 예외 없이 필수적으로 진행해야 합니다.",
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 16,
+    "category_qna": "법·기준 안내",
+    "question_qna": "압력용기를 장기간 사용하지 않을 때 검사는 어떻게 진행되나요?",
+    "answer_qna": "「고압가스안전관리법 시행규칙」 별표 22에 따라 행정관청에 휴지 신고가 된 시설이라면 해당 시설에 설치된 특정설비에 대해서는 재검사기간 산정에서 제외됩니다.\n\n다만, 시설은 정상 가동하면서 특정설비 일부만 사용하지 않으려는 경우에는 관할 검사원에게 문의하여 주시기 바랍니다.",
+    "reference_qna": null,
+    "action_qna": "관할지사 문의하기"
+  },
+  {
+    "id_qna": 17,
+    "category_qna": "법·기준 안내",
+    "question_qna": "압력용기와 저장탱크(특정설비)는 법적 관리가 어떻게 다른가요?",
+    "answer_qna": "압력용기와 저장탱크 모두 제작기준은 KGS AC 111, 재검사기준은 KGS AC116이 적용됩니다.\n\n다만,\n압력용기는 4년마다, 한국가스안전공사 검사원이 재검사 진행\n저장탱크는 5년마다(일부 적용이 다름), 전문검사기관에서 재검사 진행하는 차이가 있습니다.",
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 18,
+    "category_qna": "법·기준 안내",
+    "question_qna": "압력용기를 구조적으로 변경해서 사용할 수 있나요",
+    "answer_qna": "사용 중인 압력용기의 구조 변경(길이 변경, 노즐 추가 등)은 Alteration에 해당합니다.\n이 경우 「고압가스안전관리법」 제17조에 따라 신규검사를 받아야 합니다.\n다만, 신규검사만으로는 사용중인 압력용기의 열화, 응력부식균열 여부 등에 대한 확인이 어렵기 때문에, 전문기관의 정밀안전진단이 요구되는 경우가 있으므로 반드시 관할 검사원에게 문의하여주시기 바랍니다.",
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 19,
+    "category_qna": "법·기준 안내",
+    "question_qna": "압력용기의 설계 압력을 변경할 수 있나요?",
+    "answer_qna": "압력용기의 설계압력 변경은, 설계 조건 자체를 바꾸는 행위로서 **Rerating**에 해당합니다.\n\n압력변화에 따른 압력용기의 허용압력(MAWP), 응력, Test 압력 변화유무 등이 검토되어야하기 때문에, 반드시 관할 검사원에게 문이하여 주시기 바랍니다.",
+    "reference_qna": null,
+    "action_qna": "관할지사 문의하기"
+  },
+  {
+    "id_qna": 20,
+    "category_qna": "법·기준 안내",
+    "question_qna": "압력용기의 설계 온도를 변경할 수 있나요?",
+    "answer_qna": "압력용기의 설계온도 변경은, 설계 조건 자체를 바꾸는 행위로서 **Rerating**에 해당합니다.\n\n온도변화에 따른 압력용기의 허용응력, Test 압력 변화유무 등이 검토되어야하기 때문에, 반드시 관할 검사원에게 문이하여 주시기 바랍니다.",
+    "reference_qna": null,
+    "action_qna": "관할지사 문의하기"
+  },
+  {
+    "id_qna": 21,
+    "category_qna": "법·기준 안내",
+    "question_qna": "압력용기의 운전조건을 변경해서 사용할 수 있나요?",
+    "answer_qna": "압력용기의 운전조건(압력·온도)을 설계 범위 이내에서 변경하는 것은 법적으로 제한되지 않습니다.\n다만, 설계조건 범위를 넘어서 운전조건을 변경하고자 한다면, 설계조건이 변경되어야 하기 떄문에 검사기관 승인 절차가 필요합니다.\n또한, 운전조건을 바꿀 때는 안전밸브 설정·공정안전관리 등을 반드시 함께 검토해야 합니다.",
+    "reference_qna": null,
+    "action_qna": "[id20]\n[id21]"
+  },
+  {
+    "id_qna": 22,
+    "category_qna": "법·기준 안내",
+    "question_qna": "압력용기를 수입해서 사용해도 되나요?",
+    "answer_qna": "해외에서 제조된 압력용기를 수입하여 사용하는 것은 가능합니다.\n다만, 아무 제품이나 수입해서는 사용할 수 없으며, 다음 두 가지 조건을 반드시 확인해야 합니다.\n\n1. 제조업체 확인\n 해당 해외 제조업체가 「고압가스안전관리법」에 따른 외국용기제조등록이 완료된 업체인지 확인해야 합니다.\n2. 제품 검사 확인\n KGS AC 111에서 인정하는 해외 공인검사기관의 검사에 합격된 압력용기인지 확인해야 합니다. 비검사품인 경우, 수입 전 KGS 검사원의 출정검사가 필요하오니, 반드시 관할 검사원에게 문의하여 주시기 바랍니다.",
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 23,
+    "category_qna": "법·기준 안내",
+    "question_qna": "수입 압력용기의 검사 절차는 어떻게 되나요?",
+    "answer_qna": "해외에서 제조된 압력용기도 「고압가스안전관리법 시행규칙」별표12 및 관련 KGS코드에 따른 검사를 득하여야 합니다.\n\n다만, KGS AC111에서 인정하는 해외 공인검사기관의 검사에 합격한 서류가 제출된다면, KGS AC111 4.5.2에 의해,\n(1) 재료검사\n(2) 용접 적정성검사\n(3) 비파괴검사\n(4) 내압검사\n가 생략될 수 있습니다.",
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 24,
+    "category_qna": "법·기준 안내",
+    "question_qna": "해외 인증만으로는 국내 사용이 가능한가요?",
+    "answer_qna": "해외 인증(ASME U-Stamp 등)만으로는 불충분하며, 반드시 국내 검사원의 검사에 합격한 압력용기만을 사용할 수 있습니다. \n검사에 합격된 압력용기는 「고압가스안전관리법 시행규칙 별표 25」에 따른 합격 각인이 표시되므로, 육안으로 확인할 수 있습니다.",
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 25,
+    "category_qna": "법·기준 안내",
+    "question_qna": "해외에서 제작된 압력용기를 국내에서 수리할 수 있나요?",
+    "answer_qna": "해외 제작 용기라도, 국내 등록 수리업체가 수리 후 수리검사를 받으면 사용 가능합니다.",
+    "reference_qna": null,
+    "action_qna": "[id3]\n[id13]"
+  },
+  {
+    "id_qna": 26,
+    "category_qna": "검사절차 안내",
+    "question_qna": "물리적 접근이 곤란한 압력용기의 경우 재검사는 어떻게 진행하나요?",
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 27,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 28,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 29,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 30,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 31,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 32,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 33,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 34,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 35,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 36,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 37,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 38,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 39,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 40,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 41,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 42,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 43,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 44,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 45,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 46,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 47,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 48,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 49,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 50,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 51,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 52,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 53,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 54,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 55,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 56,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 57,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 58,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 59,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 60,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 61,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 62,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 63,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 64,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 65,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 66,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 67,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 68,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 69,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 70,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 71,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 72,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 73,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 74,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 75,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 76,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 77,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 78,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 79,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 80,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 81,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 82,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 83,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 84,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 85,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 86,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 87,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 88,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 89,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 90,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 91,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 92,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 93,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 94,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 95,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 96,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 97,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 98,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 99,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 100,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 101,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 102,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 103,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 104,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 105,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 106,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 107,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 108,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 109,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 110,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 111,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 112,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 113,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 114,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 115,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 116,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 117,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 118,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 119,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 120,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 121,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 122,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 123,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 124,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 125,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 126,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 127,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 128,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 129,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 130,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 131,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 132,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 133,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 134,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 135,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 136,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 137,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 138,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 139,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 140,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 141,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 142,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 143,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 144,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 145,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 146,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 147,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 148,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 149,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 150,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 151,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 152,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 153,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 154,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 155,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 156,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 157,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 158,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 159,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 160,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 161,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 162,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 163,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 164,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 165,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 166,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 167,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 168,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 169,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 170,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 171,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 172,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 173,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 174,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 175,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 176,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 177,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 178,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 179,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 180,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 181,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 182,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 183,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 184,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 185,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 186,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 187,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 188,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 189,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 190,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 191,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 192,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 193,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 194,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 195,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  },
+  {
+    "id_qna": 196,
+    "category_qna": null,
+    "question_qna": null,
+    "answer_qna": null,
+    "reference_qna": null,
+    "action_qna": null
+  }
+]
