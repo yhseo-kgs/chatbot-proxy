@@ -21,7 +21,7 @@ module.exports = async (req, res) => {
     const { message } = req.body || {};
     if (!message) return res.status(400).json({ ok:false, error:'message required' });
 
-    const url = 'https://clovastudio.apigw.ntruss.com/testapp/v1/chat-completions';
+    const url = 'https://clovastudio.apigw.ntruss.com/testapp/v3/chat-completions';
     const upstream = await fetch(url, {
       method:'POST',
       headers:{
