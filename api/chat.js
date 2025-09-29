@@ -1,4 +1,4 @@
-// /api/chat.js
+// /api/chat.js - 서비스 키 방식으로 변경
 module.exports = async (req, res) => {
   // CORS 헤더 설정
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -8,42 +8,53 @@ module.exports = async (req, res) => {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ ok:false, error:'Method Not Allowed' });
 
-  const { CLOVA_API_KEY, NCP_APIGW_KEY, CLOVA_MODEL_ID='HCX-007' } = process.env;
-  const missing = [];
-  if (!CLOVA_API_KEY) missing.push('CLOVA_API_KEY');
-  if (!NCP_APIGW_KEY) missing.push('NCP_APIGW_KEY');
-  if (!CLOVA_MODEL_ID) missing.push('CLOVA_MODEL_ID');
-  if (missing.length) {
-    return res.status(401).json({ ok:false, where:'proxy/env', missing, hint:'Vercel Production에 넣고 Redeploy' });
+  const { CLOVA_API_KEY, CLOVA_MODEL_ID='HCX-007' } = process.env;
+  if (!CLOVA_API_KEY) {
+    return res.status(401).json({ 
+      ok:false, 
+      where:'proxy/env', 
+      missing: ['CLOVA_API_KEY'], 
+      hint:'Vercel Production에 서비스 키 넣고 Redeploy' 
+    });
   }
 
   try {
     const { message } = req.body || {};
     if (!message) return res.status(400).json({ ok:false, error:'message required' });
 
-    const url = 'https://clovastudio.apigw.ntruss.com/testapp/v3/chat-completions';
+    // 서비스 키 방식: stream 엔드포인트 + Authorization Bearer 헤더
+    const url = `https://clovastudio.stream.ntruss.com/v1/chat-completions/${CLOVA_MODEL_ID}`;
+    
     const upstream = await fetch(url, {
       method:'POST',
       headers:{
-        'Content-Type':'application/json; charset=utf-8',
-        'X-NCP-APIGW-API-KEY': NCP_APIGW_KEY,
-        'X-ClovaAI-Api-Key': CLOVA_API_KEY,
+        'Authorization': `Bearer ${CLOVA_API_KEY}`,
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ model: CLOVA_MODEL_ID, messages:[{ role:'user', content: message }], temperature:0.2 })
+      body: JSON.stringify({ 
+        // 서비스 키 방식에서는 model 필드 불필요 (URL에 포함됨)
+        messages:[{ role:'user', content: message }], 
+        temperature: 0.5 
+      })
     });
 
     if (!upstream.ok) {
       const text = await upstream.text().catch(()=> '');
       return res.status(upstream.status).json({
-        ok:false, where:'upstream/clova', status: upstream.status, model: CLOVA_MODEL_ID,
+        ok:false, 
+        where:'upstream/clova', 
+        status: upstream.status, 
+        model: CLOVA_MODEL_ID,
         hint: (upstream.status===401||upstream.status===403)
-          ? 'Service App 모델/키/상태 확인'
+          ? '서비스 키 확인 필요'
           : '요청 포맷/쿼터 확인',
         upstream: text.slice(0,1000)
       });
     }
+    
     const data = await upstream.json();
     return res.status(200).json({ ok:true, data });
+    
   } catch (e) {
     return res.status(500).json({ ok:false, where:'proxy', error:String(e) });
   }
