@@ -1,0 +1,2042 @@
+[
+  {
+    "sido": "서울특별시",
+    "sigungu": "강남구",
+    "branch": "서울광역본부",
+    "tel": "02-3411-2081",
+    "office_id": "kgs_office_01",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "강동구",
+    "branch": "서울광역본부",
+    "tel": "02-3411-2081",
+    "office_id": "kgs_office_01",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "서초구",
+    "branch": "서울광역본부",
+    "tel": "02-3411-2081",
+    "office_id": "kgs_office_01",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "송파구",
+    "branch": "서울광역본부",
+    "tel": "02-3411-2081",
+    "office_id": "kgs_office_01",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "인천광역시",
+    "sigungu": "인천광역시",
+    "branch": "인천본부",
+    "tel": "032-435-1525",
+    "office_id": "kgs_office_02",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "인천광역시",
+    "sigungu": "강화군",
+    "branch": "인천본부",
+    "tel": "032-435-1525",
+    "office_id": "kgs_office_02",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "인천광역시",
+    "sigungu": "옹진군",
+    "branch": "인천본부",
+    "tel": "032-435-1525",
+    "office_id": "kgs_office_02",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "마포구",
+    "branch": "서울서부지사",
+    "tel": "02-393-0725",
+    "office_id": "kgs_office_03",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "서대문구",
+    "branch": "서울서부지사",
+    "tel": "02-393-0725",
+    "office_id": "kgs_office_03",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "용산구",
+    "branch": "서울서부지사",
+    "tel": "02-393-0725",
+    "office_id": "kgs_office_03",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "은평구",
+    "branch": "서울서부지사",
+    "tel": "02-393-0725",
+    "office_id": "kgs_office_03",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "종로구",
+    "branch": "서울서부지사",
+    "tel": "02-393-0725",
+    "office_id": "kgs_office_03",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "중구",
+    "branch": "서울서부지사",
+    "tel": "02-393-0725",
+    "office_id": "kgs_office_03",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "강서구",
+    "branch": "서울남부지사",
+    "tel": "02-843-0019",
+    "office_id": "kgs_office_04",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "관악구",
+    "branch": "서울남부지사",
+    "tel": "02-843-0019",
+    "office_id": "kgs_office_04",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "구로구",
+    "branch": "서울남부지사",
+    "tel": "02-843-0019",
+    "office_id": "kgs_office_04",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "금천구",
+    "branch": "서울남부지사",
+    "tel": "02-843-0019",
+    "office_id": "kgs_office_04",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "동작구",
+    "branch": "서울남부지사",
+    "tel": "02-843-0019",
+    "office_id": "kgs_office_04",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "양천구",
+    "branch": "서울남부지사",
+    "tel": "02-843-0019",
+    "office_id": "kgs_office_04",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "영등포구",
+    "branch": "서울남부지사",
+    "tel": "02-843-0019",
+    "office_id": "kgs_office_04",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "동대문구",
+    "branch": "서울동부지사",
+    "tel": "02-2217-8611",
+    "office_id": "kgs_office_05",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "성동구",
+    "branch": "서울동부지사",
+    "tel": "02-2217-8611",
+    "office_id": "kgs_office_05",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "중랑구",
+    "branch": "서울동부지사",
+    "tel": "02-2217-8611",
+    "office_id": "kgs_office_05",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "광진구",
+    "branch": "서울동부지사",
+    "tel": "02-2217-8611",
+    "office_id": "kgs_office_05",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "성북구",
+    "branch": "서울동부지사",
+    "tel": "02-2217-8611",
+    "office_id": "kgs_office_05",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "강북구",
+    "branch": "서울동부지사",
+    "tel": "02-2217-8611",
+    "office_id": "kgs_office_05",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "도봉구",
+    "branch": "서울동부지사",
+    "tel": "02-2217-8611",
+    "office_id": "kgs_office_05",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "서울특별시",
+    "sigungu": "노원구",
+    "branch": "서울동부지사",
+    "tel": "02-2217-8611",
+    "office_id": "kgs_office_05",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "부산광역시",
+    "sigungu": "동구",
+    "branch": "부산광역본부",
+    "tel": "051-646-0019",
+    "office_id": "kgs_office_06",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "부산광역시",
+    "sigungu": "남구",
+    "branch": "부산광역본부",
+    "tel": "051-646-0019",
+    "office_id": "kgs_office_06",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "부산광역시",
+    "sigungu": "서구",
+    "branch": "부산광역본부",
+    "tel": "051-646-0019",
+    "office_id": "kgs_office_06",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "부산광역시",
+    "sigungu": "부산진구",
+    "branch": "부산광역본부",
+    "tel": "051-646-0019",
+    "office_id": "kgs_office_06",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "부산광역시",
+    "sigungu": "중구",
+    "branch": "부산광역본부",
+    "tel": "051-646-0019",
+    "office_id": "kgs_office_06",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "부산광역시",
+    "sigungu": "영도구",
+    "branch": "부산광역본부",
+    "tel": "051-646-0019",
+    "office_id": "kgs_office_06",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "부산광역시",
+    "sigungu": "강서구",
+    "branch": "부산광역본부",
+    "tel": "051-646-0019",
+    "office_id": "kgs_office_06",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "부산광역시",
+    "sigungu": "사상구",
+    "branch": "부산광역본부",
+    "tel": "051-646-0019",
+    "office_id": "kgs_office_06",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "부산광역시",
+    "sigungu": "사하구",
+    "branch": "부산광역본부",
+    "tel": "051-646-0019",
+    "office_id": "kgs_office_06",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "부산광역시",
+    "sigungu": "수영구",
+    "branch": "부산광역본부",
+    "tel": "051-646-0019",
+    "office_id": "kgs_office_06",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상남도",
+    "sigungu": "창원시",
+    "branch": "경남본부",
+    "tel": "055-290-6900",
+    "office_id": "kgs_office_07",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상남도",
+    "sigungu": "김해시",
+    "branch": "경남본부",
+    "tel": "055-290-6900",
+    "office_id": "kgs_office_07",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상남도",
+    "sigungu": "밀양시",
+    "branch": "경남본부",
+    "tel": "055-290-6900",
+    "office_id": "kgs_office_07",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상남도",
+    "sigungu": "양산시",
+    "branch": "경남본부",
+    "tel": "055-290-6900",
+    "office_id": "kgs_office_07",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상남도",
+    "sigungu": "거제시",
+    "branch": "경남본부",
+    "tel": "055-290-6900",
+    "office_id": "kgs_office_07",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상남도",
+    "sigungu": "함안군",
+    "branch": "경남본부",
+    "tel": "055-290-6900",
+    "office_id": "kgs_office_07",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상남도",
+    "sigungu": "의령군",
+    "branch": "경남본부",
+    "tel": "055-290-6900",
+    "office_id": "kgs_office_07",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상남도",
+    "sigungu": "창녕군",
+    "branch": "경남본부",
+    "tel": "055-290-6900",
+    "office_id": "kgs_office_07",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "부산광역시",
+    "sigungu": "금정구",
+    "branch": "부산북부지사",
+    "tel": "051-503-0019",
+    "office_id": "kgs_office_08",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "부산광역시",
+    "sigungu": "기장군",
+    "branch": "부산북부지사",
+    "tel": "051-503-0019",
+    "office_id": "kgs_office_08",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "부산광역시",
+    "sigungu": "동래구",
+    "branch": "부산북부지사",
+    "tel": "051-503-0019",
+    "office_id": "kgs_office_08",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "부산광역시",
+    "sigungu": "북구",
+    "branch": "부산북부지사",
+    "tel": "051-503-0019",
+    "office_id": "kgs_office_08",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "부산광역시",
+    "sigungu": "연제구",
+    "branch": "부산북부지사",
+    "tel": "051-503-0019",
+    "office_id": "kgs_office_08",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "부산광역시",
+    "sigungu": "해운대구",
+    "branch": "부산북부지사",
+    "tel": "051-503-0019",
+    "office_id": "kgs_office_08",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상남도",
+    "sigungu": "진주시",
+    "branch": "경남서부지사",
+    "tel": "055-746-0019",
+    "office_id": "kgs_office_09",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상남도",
+    "sigungu": "사천시",
+    "branch": "경남서부지사",
+    "tel": "055-746-0019",
+    "office_id": "kgs_office_09",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상남도",
+    "sigungu": "통영시",
+    "branch": "경남서부지사",
+    "tel": "055-746-0019",
+    "office_id": "kgs_office_09",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상남도",
+    "sigungu": "거창군",
+    "branch": "경남서부지사",
+    "tel": "055-746-0019",
+    "office_id": "kgs_office_09",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상남도",
+    "sigungu": "고성군",
+    "branch": "경남서부지사",
+    "tel": "055-746-0019",
+    "office_id": "kgs_office_09",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상남도",
+    "sigungu": "남해군",
+    "branch": "경남서부지사",
+    "tel": "055-746-0019",
+    "office_id": "kgs_office_09",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상남도",
+    "sigungu": "산청군",
+    "branch": "경남서부지사",
+    "tel": "055-746-0019",
+    "office_id": "kgs_office_09",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상남도",
+    "sigungu": "함양군",
+    "branch": "경남서부지사",
+    "tel": "055-746-0019",
+    "office_id": "kgs_office_09",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상남도",
+    "sigungu": "합천군",
+    "branch": "경남서부지사",
+    "tel": "055-746-0019",
+    "office_id": "kgs_office_09",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상남도",
+    "sigungu": "하동군",
+    "branch": "경남서부지사",
+    "tel": "055-746-0019",
+    "office_id": "kgs_office_09",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "대구광역시",
+    "sigungu": "대구광역시",
+    "branch": "대구광역본부",
+    "tel": "053-588-0019",
+    "office_id": "kgs_office_10",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "구미시",
+    "branch": "대구광역본부",
+    "tel": "053-588-0019",
+    "office_id": "kgs_office_10",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "경산시",
+    "branch": "대구광역본부",
+    "tel": "053-588-0019",
+    "office_id": "kgs_office_10",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "영천시",
+    "branch": "대구광역본부",
+    "tel": "053-588-0019",
+    "office_id": "kgs_office_10",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "김천시",
+    "branch": "대구광역본부",
+    "tel": "053-588-0019",
+    "office_id": "kgs_office_10",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "고령군",
+    "branch": "대구광역본부",
+    "tel": "053-588-0019",
+    "office_id": "kgs_office_10",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "칠곡군",
+    "branch": "대구광역본부",
+    "tel": "053-588-0019",
+    "office_id": "kgs_office_10",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "청도군",
+    "branch": "대구광역본부",
+    "tel": "053-588-0019",
+    "office_id": "kgs_office_10",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "성주군",
+    "branch": "대구광역본부",
+    "tel": "053-588-0019",
+    "office_id": "kgs_office_10",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "울산광역시",
+    "sigungu": "울산광역시",
+    "branch": "울산본부",
+    "tel": "052-247-0019",
+    "office_id": "kgs_office_11",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "포항시",
+    "branch": "경북동부지사",
+    "tel": "054-284-0019",
+    "office_id": "kgs_office_12",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "경주시",
+    "branch": "경북동부지사",
+    "tel": "054-284-0019",
+    "office_id": "kgs_office_12",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "영덕군",
+    "branch": "경북동부지사",
+    "tel": "054-284-0019",
+    "office_id": "kgs_office_12",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "울진군",
+    "branch": "경북동부지사",
+    "tel": "054-284-0019",
+    "office_id": "kgs_office_12",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "울릉군",
+    "branch": "경북동부지사",
+    "tel": "054-284-0019",
+    "office_id": "kgs_office_12",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "안동시",
+    "branch": "경북북부지사",
+    "tel": "054-854-0019",
+    "office_id": "kgs_office_13",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "영주시",
+    "branch": "경북북부지사",
+    "tel": "054-854-0019",
+    "office_id": "kgs_office_13",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "상주시",
+    "branch": "경북북부지사",
+    "tel": "054-854-0019",
+    "office_id": "kgs_office_13",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "문경시",
+    "branch": "경북북부지사",
+    "tel": "054-854-0019",
+    "office_id": "kgs_office_13",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "의성군",
+    "branch": "경북북부지사",
+    "tel": "054-854-0019",
+    "office_id": "kgs_office_13",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "예천군",
+    "branch": "경북북부지사",
+    "tel": "054-854-0019",
+    "office_id": "kgs_office_13",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "봉화군",
+    "branch": "경북북부지사",
+    "tel": "054-854-0019",
+    "office_id": "kgs_office_13",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "청송군",
+    "branch": "경북북부지사",
+    "tel": "054-854-0019",
+    "office_id": "kgs_office_13",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "군위군",
+    "branch": "경북북부지사",
+    "tel": "054-854-0019",
+    "office_id": "kgs_office_13",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경상북도",
+    "sigungu": "영양군",
+    "branch": "경북북부지사",
+    "tel": "054-854-0019",
+    "office_id": "kgs_office_13",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "대전광역시",
+    "sigungu": "대전광역시",
+    "branch": "대전광역본부",
+    "tel": "042-485-0019",
+    "office_id": "kgs_office_14",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "세종특별자치시",
+    "sigungu": "세종특별자치시",
+    "branch": "대전광역본부",
+    "tel": "042-485-0019",
+    "office_id": "kgs_office_14",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청남도",
+    "sigungu": "계룡시",
+    "branch": "대전광역본부",
+    "tel": "042-485-0019",
+    "office_id": "kgs_office_14",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청남도",
+    "sigungu": "공주시",
+    "branch": "대전광역본부",
+    "tel": "042-485-0019",
+    "office_id": "kgs_office_14",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청남도",
+    "sigungu": "논산시",
+    "branch": "대전광역본부",
+    "tel": "042-485-0019",
+    "office_id": "kgs_office_14",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청남도",
+    "sigungu": "보령시",
+    "branch": "대전광역본부",
+    "tel": "042-485-0019",
+    "office_id": "kgs_office_14",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청남도",
+    "sigungu": "청양군",
+    "branch": "대전광역본부",
+    "tel": "042-485-0019",
+    "office_id": "kgs_office_14",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청남도",
+    "sigungu": "서천군",
+    "branch": "대전광역본부",
+    "tel": "042-485-0019",
+    "office_id": "kgs_office_14",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청남도",
+    "sigungu": "부여군",
+    "branch": "대전광역본부",
+    "tel": "042-485-0019",
+    "office_id": "kgs_office_14",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청남도",
+    "sigungu": "금산군",
+    "branch": "대전광역본부",
+    "tel": "042-485-0019",
+    "office_id": "kgs_office_14",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청북도",
+    "sigungu": "청주시",
+    "branch": "충북본부",
+    "tel": "043-268-0019",
+    "office_id": "kgs_office_15",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청북도",
+    "sigungu": "괴산군",
+    "branch": "충북본부",
+    "tel": "043-268-0019",
+    "office_id": "kgs_office_15",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청북도",
+    "sigungu": "보은군",
+    "branch": "충북본부",
+    "tel": "043-268-0019",
+    "office_id": "kgs_office_15",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청북도",
+    "sigungu": "영동군",
+    "branch": "충북본부",
+    "tel": "043-268-0019",
+    "office_id": "kgs_office_15",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청북도",
+    "sigungu": "옥천군",
+    "branch": "충북본부",
+    "tel": "043-268-0019",
+    "office_id": "kgs_office_15",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청북도",
+    "sigungu": "증평군",
+    "branch": "충북본부",
+    "tel": "043-268-0019",
+    "office_id": "kgs_office_15",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청북도",
+    "sigungu": "진천군",
+    "branch": "충북본부",
+    "tel": "043-268-0019",
+    "office_id": "kgs_office_15",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청남도",
+    "sigungu": "천안시",
+    "branch": "충남본부",
+    "tel": "041-561-0019",
+    "office_id": "kgs_office_16",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청남도",
+    "sigungu": "아산시",
+    "branch": "충남본부",
+    "tel": "041-561-0019",
+    "office_id": "kgs_office_16",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청남도",
+    "sigungu": "서산시",
+    "branch": "충남본부",
+    "tel": "041-561-0019",
+    "office_id": "kgs_office_16",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청남도",
+    "sigungu": "당진시",
+    "branch": "충남본부",
+    "tel": "041-561-0019",
+    "office_id": "kgs_office_16",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청남도",
+    "sigungu": "예산군",
+    "branch": "충남본부",
+    "tel": "041-561-0019",
+    "office_id": "kgs_office_16",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청남도",
+    "sigungu": "홍성군",
+    "branch": "충남본부",
+    "tel": "041-561-0019",
+    "office_id": "kgs_office_16",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청남도",
+    "sigungu": "태안군",
+    "branch": "충남본부",
+    "tel": "041-561-0019",
+    "office_id": "kgs_office_16",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청북도",
+    "sigungu": "충주시",
+    "branch": "충북북부지사",
+    "tel": "043-724-4500",
+    "office_id": "kgs_office_17",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청북도",
+    "sigungu": "제천시",
+    "branch": "충북북부지사",
+    "tel": "043-724-4500",
+    "office_id": "kgs_office_17",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청북도",
+    "sigungu": "단양군",
+    "branch": "충북북부지사",
+    "tel": "043-724-4500",
+    "office_id": "kgs_office_17",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "충청북도",
+    "sigungu": "음성군",
+    "branch": "충북북부지사",
+    "tel": "043-724-4500",
+    "office_id": "kgs_office_17",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "광주광역시",
+    "sigungu": "광주광역시",
+    "branch": "광주광역본부",
+    "tel": "062-383-0019",
+    "office_id": "kgs_office_18",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라남도",
+    "sigungu": "나주시",
+    "branch": "광주광역본부",
+    "tel": "062-383-0019",
+    "office_id": "kgs_office_18",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라남도",
+    "sigungu": "곡성군",
+    "branch": "광주광역본부",
+    "tel": "062-383-0019",
+    "office_id": "kgs_office_18",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라남도",
+    "sigungu": "화순군",
+    "branch": "광주광역본부",
+    "tel": "062-383-0019",
+    "office_id": "kgs_office_18",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라남도",
+    "sigungu": "영광군",
+    "branch": "광주광역본부",
+    "tel": "062-383-0019",
+    "office_id": "kgs_office_18",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라남도",
+    "sigungu": "함평군",
+    "branch": "광주광역본부",
+    "tel": "062-383-0019",
+    "office_id": "kgs_office_18",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라남도",
+    "sigungu": "담양군",
+    "branch": "광주광역본부",
+    "tel": "062-383-0019",
+    "office_id": "kgs_office_18",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라남도",
+    "sigungu": "장성군",
+    "branch": "광주광역본부",
+    "tel": "062-383-0019",
+    "office_id": "kgs_office_18",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라북도",
+    "sigungu": "전주시",
+    "branch": "전북본부",
+    "tel": "063-276-0019",
+    "office_id": "kgs_office_19",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라북도",
+    "sigungu": "군산시",
+    "branch": "전북본부",
+    "tel": "063-276-0019",
+    "office_id": "kgs_office_19",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라북도",
+    "sigungu": "익산시",
+    "branch": "전북본부",
+    "tel": "063-276-0019",
+    "office_id": "kgs_office_19",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라북도",
+    "sigungu": "정읍시",
+    "branch": "전북본부",
+    "tel": "063-276-0019",
+    "office_id": "kgs_office_19",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라북도",
+    "sigungu": "남원시",
+    "branch": "전북본부",
+    "tel": "063-276-0019",
+    "office_id": "kgs_office_19",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라북도",
+    "sigungu": "김제시",
+    "branch": "전북본부",
+    "tel": "063-276-0019",
+    "office_id": "kgs_office_19",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라북도",
+    "sigungu": "완주군",
+    "branch": "전북본부",
+    "tel": "063-276-0019",
+    "office_id": "kgs_office_19",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라북도",
+    "sigungu": "진안군",
+    "branch": "전북본부",
+    "tel": "063-276-0019",
+    "office_id": "kgs_office_19",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라북도",
+    "sigungu": "무주군",
+    "branch": "전북본부",
+    "tel": "063-276-0019",
+    "office_id": "kgs_office_19",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라북도",
+    "sigungu": "장수군",
+    "branch": "전북본부",
+    "tel": "063-276-0019",
+    "office_id": "kgs_office_19",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라북도",
+    "sigungu": "임실군",
+    "branch": "전북본부",
+    "tel": "063-276-0019",
+    "office_id": "kgs_office_19",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라북도",
+    "sigungu": "순창군",
+    "branch": "전북본부",
+    "tel": "063-276-0019",
+    "office_id": "kgs_office_19",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라북도",
+    "sigungu": "고창군",
+    "branch": "전북본부",
+    "tel": "063-276-0019",
+    "office_id": "kgs_office_19",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라북도",
+    "sigungu": "부안군",
+    "branch": "전북본부",
+    "tel": "063-276-0019",
+    "office_id": "kgs_office_19",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라남도",
+    "sigungu": "광양시",
+    "branch": "전남동부지사",
+    "tel": "061-682-0019",
+    "office_id": "kgs_office_20",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라남도",
+    "sigungu": "순천시",
+    "branch": "전남동부지사",
+    "tel": "061-682-0019",
+    "office_id": "kgs_office_20",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라남도",
+    "sigungu": "여수시",
+    "branch": "전남동부지사",
+    "tel": "061-682-0019",
+    "office_id": "kgs_office_20",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라남도",
+    "sigungu": "고흥군",
+    "branch": "전남동부지사",
+    "tel": "061-682-0019",
+    "office_id": "kgs_office_20",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라남도",
+    "sigungu": "보성군",
+    "branch": "전남동부지사",
+    "tel": "061-682-0019",
+    "office_id": "kgs_office_20",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라남도",
+    "sigungu": "구례군",
+    "branch": "전남동부지사",
+    "tel": "061-682-0019",
+    "office_id": "kgs_office_20",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라남도",
+    "sigungu": "목포시",
+    "branch": "전남서부지사",
+    "tel": "061-283-0019",
+    "office_id": "kgs_office_21",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라남도",
+    "sigungu": "신안군",
+    "branch": "전남서부지사",
+    "tel": "061-283-0019",
+    "office_id": "kgs_office_21",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라남도",
+    "sigungu": "무안군",
+    "branch": "전남서부지사",
+    "tel": "061-283-0019",
+    "office_id": "kgs_office_21",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라남도",
+    "sigungu": "영암군",
+    "branch": "전남서부지사",
+    "tel": "061-283-0019",
+    "office_id": "kgs_office_21",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라남도",
+    "sigungu": "강진군",
+    "branch": "전남서부지사",
+    "tel": "061-283-0019",
+    "office_id": "kgs_office_21",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라남도",
+    "sigungu": "해남군",
+    "branch": "전남서부지사",
+    "tel": "061-283-0019",
+    "office_id": "kgs_office_21",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라남도",
+    "sigungu": "완도군",
+    "branch": "전남서부지사",
+    "tel": "061-283-0019",
+    "office_id": "kgs_office_21",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라남도",
+    "sigungu": "진도군",
+    "branch": "전남서부지사",
+    "tel": "061-283-0019",
+    "office_id": "kgs_office_21",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "전라남도",
+    "sigungu": "장흥군",
+    "branch": "전남서부지사",
+    "tel": "061-283-0019",
+    "office_id": "kgs_office_21",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "수원시",
+    "branch": "경기광역본부",
+    "tel": "031-259-3500",
+    "office_id": "kgs_office_22",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "군포시",
+    "branch": "경기광역본부",
+    "tel": "031-259-3500",
+    "office_id": "kgs_office_22",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "의왕시",
+    "branch": "경기광역본부",
+    "tel": "031-259-3500",
+    "office_id": "kgs_office_22",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "과천시",
+    "branch": "경기광역본부",
+    "tel": "031-259-3500",
+    "office_id": "kgs_office_22",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "안성시",
+    "branch": "경기광역본부",
+    "tel": "031-259-3500",
+    "office_id": "kgs_office_22",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "화성시",
+    "branch": "경기광역본부",
+    "tel": "031-259-3500",
+    "office_id": "kgs_office_22",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "평택시",
+    "branch": "경기광역본부",
+    "tel": "031-259-3500",
+    "office_id": "kgs_office_22",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "안양시",
+    "branch": "경기광역본부",
+    "tel": "031-259-3500",
+    "office_id": "kgs_office_22",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "오산시",
+    "branch": "경기광역본부",
+    "tel": "031-259-3500",
+    "office_id": "kgs_office_22",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "의정부시",
+    "branch": "경기북부지사",
+    "tel": "031-878-0019",
+    "office_id": "kgs_office_23",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "동두천시",
+    "branch": "경기북부지사",
+    "tel": "031-878-0019",
+    "office_id": "kgs_office_23",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "구리시",
+    "branch": "경기북부지사",
+    "tel": "031-878-0019",
+    "office_id": "kgs_office_23",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "남양주시",
+    "branch": "경기북부지사",
+    "tel": "031-878-0019",
+    "office_id": "kgs_office_23",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "포천시",
+    "branch": "경기북부지사",
+    "tel": "031-878-0019",
+    "office_id": "kgs_office_23",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "연천군",
+    "branch": "경기북부지사",
+    "tel": "031-878-0019",
+    "office_id": "kgs_office_23",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "가평군",
+    "branch": "경기북부지사",
+    "tel": "031-878-0019",
+    "office_id": "kgs_office_23",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "부천시",
+    "branch": "경기서부지사",
+    "tel": "032-345-0019",
+    "office_id": "kgs_office_24",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "시흥시",
+    "branch": "경기서부지사",
+    "tel": "032-345-0019",
+    "office_id": "kgs_office_24",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "광명시",
+    "branch": "경기서부지사",
+    "tel": "032-345-0019",
+    "office_id": "kgs_office_24",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "안산시",
+    "branch": "경기서부지사",
+    "tel": "032-345-0019",
+    "office_id": "kgs_office_24",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "성남시",
+    "branch": "경기동부지사",
+    "tel": "031-798-0019",
+    "office_id": "kgs_office_25",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "광주시",
+    "branch": "경기동부지사",
+    "tel": "031-798-0019",
+    "office_id": "kgs_office_25",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "용인시",
+    "branch": "경기동부지사",
+    "tel": "031-798-0019",
+    "office_id": "kgs_office_25",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "이천시",
+    "branch": "경기동부지사",
+    "tel": "031-798-0019",
+    "office_id": "kgs_office_25",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "하남시",
+    "branch": "경기동부지사",
+    "tel": "031-798-0019",
+    "office_id": "kgs_office_25",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "여주시",
+    "branch": "경기동부지사",
+    "tel": "031-798-0019",
+    "office_id": "kgs_office_25",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "양평군",
+    "branch": "경기동부지사",
+    "tel": "031-798-0019",
+    "office_id": "kgs_office_25",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "김포시",
+    "branch": "경기중부지사",
+    "tel": "031-927-2700",
+    "office_id": "kgs_office_26",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "고양시",
+    "branch": "경기중부지사",
+    "tel": "031-927-2700",
+    "office_id": "kgs_office_26",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "파주시",
+    "branch": "경기중부지사",
+    "tel": "031-927-2700",
+    "office_id": "kgs_office_26",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "양주시",
+    "branch": "경기중부지사",
+    "tel": "031-927-2700",
+    "office_id": "kgs_office_26",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "경기도",
+    "sigungu": "개성공업지구",
+    "branch": "경기중부지사",
+    "tel": "031-927-2700",
+    "office_id": "kgs_office_26",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "강원도",
+    "sigungu": "춘천시",
+    "branch": "강원광역본부",
+    "tel": "033-254-0019",
+    "office_id": "kgs_office_27",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "강원도",
+    "sigungu": "원주시",
+    "branch": "강원광역본부",
+    "tel": "033-254-0019",
+    "office_id": "kgs_office_27",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "강원도",
+    "sigungu": "홍천군",
+    "branch": "강원광역본부",
+    "tel": "033-254-0019",
+    "office_id": "kgs_office_27",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "강원도",
+    "sigungu": "횡성군",
+    "branch": "강원광역본부",
+    "tel": "033-254-0019",
+    "office_id": "kgs_office_27",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "강원도",
+    "sigungu": "영월군",
+    "branch": "강원광역본부",
+    "tel": "033-254-0019",
+    "office_id": "kgs_office_27",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "강원도",
+    "sigungu": "철원군",
+    "branch": "강원광역본부",
+    "tel": "033-254-0019",
+    "office_id": "kgs_office_27",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "강원도",
+    "sigungu": "화천군",
+    "branch": "강원광역본부",
+    "tel": "033-254-0019",
+    "office_id": "kgs_office_27",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "강원도",
+    "sigungu": "양구군",
+    "branch": "강원광역본부",
+    "tel": "033-254-0019",
+    "office_id": "kgs_office_27",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "강원도",
+    "sigungu": "인제군",
+    "branch": "강원광역본부",
+    "tel": "033-254-0019",
+    "office_id": "kgs_office_27",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "강원도",
+    "sigungu": "강릉시",
+    "branch": "강원영동지사",
+    "tel": "033-643-0019",
+    "office_id": "kgs_office_28",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "강원도",
+    "sigungu": "동해시",
+    "branch": "강원영동지사",
+    "tel": "033-643-0019",
+    "office_id": "kgs_office_28",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "강원도",
+    "sigungu": "태백시",
+    "branch": "강원영동지사",
+    "tel": "033-643-0019",
+    "office_id": "kgs_office_28",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "강원도",
+    "sigungu": "속초시",
+    "branch": "강원영동지사",
+    "tel": "033-643-0019",
+    "office_id": "kgs_office_28",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "강원도",
+    "sigungu": "삼척시",
+    "branch": "강원영동지사",
+    "tel": "033-643-0019",
+    "office_id": "kgs_office_28",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "강원도",
+    "sigungu": "평창군",
+    "branch": "강원영동지사",
+    "tel": "033-643-0019",
+    "office_id": "kgs_office_28",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "강원도",
+    "sigungu": "고성군",
+    "branch": "강원영동지사",
+    "tel": "033-643-0019",
+    "office_id": "kgs_office_28",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "강원도",
+    "sigungu": "양양군",
+    "branch": "강원영동지사",
+    "tel": "033-643-0019",
+    "office_id": "kgs_office_28",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "강원도",
+    "sigungu": "정선군",
+    "branch": "강원영동지사",
+    "tel": "033-643-0019",
+    "office_id": "kgs_office_28",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "제주특별자치도",
+    "sigungu": "제주시",
+    "branch": "제주지역본부",
+    "tel": "064-748-0019",
+    "office_id": "kgs_office_29",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  },
+  {
+    "sido": "제주특별자치도",
+    "sigungu": "서귀포시",
+    "branch": "제주지역본부",
+    "tel": "064-748-0019",
+    "office_id": "kgs_office_29",
+    "service_hours": "평일 09:00–18:00",
+    "alt_tel": "043-750-1000",
+    "alt_tel_label": "공사 대표번호"
+  }
+]
