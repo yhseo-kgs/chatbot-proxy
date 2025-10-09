@@ -2,6 +2,8 @@
 import OpenAI from "openai";
 import path from "path";
 import fs from "fs";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -28,14 +30,21 @@ function cosineSimilarity(vecA, vecB) {
 // 2. JSON 로드 (메모리 캐싱)
 // -----------------------------
 let qnaData = [];
-const dataPath = path.join(process.cwd(), "public", "data", "chatbot_qna.json");
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const dataPath = path.join(__dirname, "..", "public", "data", "chatbot_qna.json");
 
 try {
+  console.log(`[SEM] 🔍 Looking for data at: ${dataPath}`);
+  console.log(`[SEM] 🔍 Current working directory: ${process.cwd()}`);
+  console.log(`[SEM] 🔍 __dirname: ${__dirname}`);
+  
   const raw = fs.readFileSync(dataPath, "utf-8");
   qnaData = JSON.parse(raw);
   console.log(`[SEM] ✅ QnA data loaded: ${qnaData.length} items`);
 } catch (err) {
   console.error("[SEM] ❌ Failed to load QnA JSON:", err.message);
+  console.error("[SEM] ❌ File path attempted:", dataPath);
+  console.error("[SEM] ❌ Error details:", err);
 }
 
 // -----------------------------
@@ -226,4 +235,5 @@ export default async function handler(req, res) {
     });
   }
 }
+
 
