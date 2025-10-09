@@ -197,14 +197,27 @@ export default async function handler(req, res) {
     const elapsed = Date.now() - startTime;
     console.log(`[SEM] ⏱️  Processed in ${elapsed}ms`);
     
+    // 상세 디버깅 로그 추가
+    console.log(`[SEM] 🔍 Query vector length: ${queryVec.length}`);
+    console.log(`[SEM] 🔍 Total items processed: ${results.length}`);
+    
     topN.forEach((r, i) => {
       console.log(
         `[SEM] top${i + 1}: id=${r.id} ` +
         `cos=${r.similarity.toFixed(3)} ` +
         `tag=${r.tag_match} cat=${r.cat_match} ` +
-        `final=${r.final_score.toFixed(3)}`
+        `final=${r.final_score.toFixed(3)} ` +
+        `question="${r.question.substring(0, 30)}..."`
       );
     });
+    
+    // ID=1이 결과에 포함되는지 확인
+    const id1Result = results.find(r => r.id === 1);
+    if (id1Result) {
+      console.log(`[SEM] 🔍 ID=1 found at rank ${results.indexOf(id1Result) + 1}: cos=${id1Result.similarity.toFixed(3)} final=${id1Result.final_score.toFixed(3)}`);
+    } else {
+      console.log(`[SEM] ⚠️ ID=1 not found in results!`);
+    }
 
     // -----------------------------
     // 3-7. 응답 반환
