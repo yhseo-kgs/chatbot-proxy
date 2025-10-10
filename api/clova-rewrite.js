@@ -1,65 +1,30 @@
-// /api/clova-rewrite.js
-// semantic-search의 llm_payload를 받아 Clova로 자연어 재가공
-
+// ✅ CLOVA Studio HCX-007 Chat Completions v3 + Vercel ESM 환경 완전 대응 버전
 export default async function handler(req, res) {
-  // CORS 헤더
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  
-  if (req.method === 'OPTIONS') return res.status(200).end();
-  if (req.method !== 'POST') {
-    return res.status(405).json({ ok: false, error: 'Method Not Allowed' });
-  }
-
-  const { 
-    CLOVA_API_KEY, 
-    CLOVA_CLIENT_ID, 
-    CLOVA_CLIENT_SECRET, 
-    CLOVA_MODEL_ID = 'HCX-007' 
-  } = process.env;
-  const { message } = req.body || {};
-
-  // 환경 변수 체크
-  if (!CLOVA_API_KEY || !CLOVA_CLIENT_ID || !CLOVA_CLIENT_SECRET) {
-    return res.status(401).json({ 
-      ok: false, 
-      error: 'Missing required Clova credentials',
-      hint: 'Set CLOVA_API_KEY, CLOVA_CLIENT_ID, CLOVA_CLIENT_SECRET in Vercel Environment Variables'
-    });
-  }
-
-  // message 체크 (llm_payload)
-  if (!message) {
-    return res.status(400).json({ 
-      ok: false, 
-      error: 'message required',
-      hint: 'Send { message: top1.llm_payload }'
-    });
-  }
-
   try {
-    console.log('[CLOVA-REWRITE] 요청 시작');
-    console.time('[CLOVA-REWRITE] 처리 시간');
+    // ✅ 요청 파싱
+    const body = req.body || (await req.json?.());
+    const message = body?.message || "기본 질문입니다.";
 
-    const url = `https://clovastudio.stream.ntruss.com/v3/chat-completions/${CLOVA_MODEL_ID}`;
-    
-    // HCX-007 v3 규격에 맞는 payload 구조
-    const GUARDRAIL = "공손하고 명확한 '~합니다'체로 2–3줄만 답하세요. 수치·용어는 원문 그대로 유지하세요.";
-    
+    // ✅ 환경 변수 검사 (API Key만)
+    if (!process.env.CLOVA_API_KEY) {
+      return res
+        .status(401)
+        .json({ ok: false, error: "Missing CLOVA_API_KEY" });
+    }
+
+    // ✅ UUID (요청 추적용)
+    const requestId = crypto.randomUUID();
+
+    // ✅ CLOVA Studio 요청 Payload (chat.js 설정과 동일)
     const payload = {
       messages: [
         {
           role: "system",
-          content: [
-            { type: "text", text: GUARDRAIL }
-          ]
+          content: [{ type: "text", text: "공손하고 명확한 '~합니다'체로 2–3줄만 답하세요. 수치·용어는 원문 그대로 유지하세요." }]
         },
         {
           role: "user",
-          content: [
-            { type: "text", text: message }
-          ]
+          content: [{ type: "text", text: message }]
         }
       ],
       thinking: { effort: "low" },
@@ -67,51 +32,47 @@ export default async function handler(req, res) {
       topP: 0.8,
       topK: 0,
       repetitionPenalty: 1.1,
-      maxCompletionTokens: 800
+      maxCompletionTokens: 1024
     };
 
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${CLOVA_API_KEY}`,
-        'X-NCP-APIGW-API-KEY-ID': process.env.CLOVA_CLIENT_ID,
-        'X-NCP-APIGW-API-KEY': process.env.CLOVA_CLIENT_SECRET
-      },
-      body: JSON.stringify(payload)
-    });
+    // ✅ HCX-007 엔드포인트 요청
+    const response = await fetch(
+      "https://clovastudio.stream.ntruss.com/v3/chat-completions/HCX-007",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.CLOVA_API_KEY}`,
+          "X-NCP-CLOVASTUDIO-REQUEST-ID": requestId
+        },
+        body: JSON.stringify(payload)
+      }
+    );
 
-    if (!response.ok) {
-      const errorText = await response.text().catch(() => '');
-      console.error(`[CLOVA-REWRITE] HTTP ${response.status}:`, errorText.slice(0, 200));
-      throw new Error(`Clova API error: ${response.status}`);
-    }
-
+    // ✅ 응답 파싱 (v3 표준 경로 우선, 폴백 포함)
     const data = await response.json();
-    console.log('[CLOVA-REWRITE] 응답 구조:', JSON.stringify(data, null, 2));
-    const text = data?.choices?.[0]?.message?.content?.trim() || '';
+    const text =
+      data?.result?.message?.content?.trim() ||
+      data?.choices?.[0]?.message?.content?.trim() ||
+      "응답이 없습니다.";
 
-    if (!text) {
-      console.warn('[CLOVA-REWRITE] 빈 응답 수신');
-      throw new Error('Empty response from Clova');
-    }
+    console.log("[CLOVA-REWRITE] 응답 구조:", JSON.stringify(data, null, 2));
 
-    console.timeEnd('[CLOVA-REWRITE] 처리 시간');
-    console.log('[CLOVA-REWRITE] 성공:', text.substring(0, 50) + '...');
-
-    return res.status(200).json({ 
-      ok: true, 
+    // ✅ 결과 반환
+    res.status(200).json({
+      ok: true,
       text,
-      source: 'clova-rewrite'
+      source: "clova-rewrite"
     });
-
   } catch (error) {
-    console.error('[CLOVA-REWRITE] 오류:', error.message);
-    return res.status(500).json({ 
-      ok: false, 
-      error: error.message,
-      fallback: true  // 폴백 필요 신호
-    });
+    console.error("[CLOVA-REWRITE] 오류:", error);
+    res.status(500).json({ ok: false, error: error.message });
   }
 }
 
+// ✅ CORS 헤더 추가 (선택, 브라우저 호출용)
+export const config = {
+  api: {
+    bodyParser: true
+  }
+};

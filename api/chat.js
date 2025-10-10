@@ -56,8 +56,8 @@ async function runClova(messages, CLOVA_API_KEY, CLOVA_MODEL_ID) {
       temperature: 0.25,
       topP: 0.8,
       topK: 0,
-      repeatPenalty: 5.0,
-      maxTokens: 1024
+      repetitionPenalty: 1.1,  // ✅ v3 규격 이름으로 변경 + 현실적 수치
+      maxCompletionTokens: 1024
     })
   });
 
@@ -125,8 +125,8 @@ async function callAIRewrite({ userText, referenceText, wantLong, CLOVA_API_KEY,
     temperature: 0.2,
     topP: 0.7,
     topK: 0,
-    repeatPenalty: 1.1,
-    maxTokens: wantLong ? 600 : 400
+    repetitionPenalty: 1.1,  // ✅ v3 규격 이름
+    maxCompletionTokens: wantLong ? 600 : 400  // ✅ v3 규격 이름
   };
 
   return await runClova(body.messages, CLOVA_API_KEY, CLOVA_MODEL_ID);
