@@ -30,7 +30,7 @@ export default async function handler(req, res) {
         }
       ],
       thinking: { effort: "low" },
-      temperature: 0.25,
+      temperature: 0.35,
       topP: 0.8,
       topK: 0,
       repetitionPenalty: 1.1,
