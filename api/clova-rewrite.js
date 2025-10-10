@@ -88,7 +88,8 @@ export default async function handler(req, res) {
     }
 
     const data = await response.json();
-    const text = data?.result?.message?.content?.trim() || '';
+    console.log('[CLOVA-REWRITE] 응답 구조:', JSON.stringify(data, null, 2));
+    const text = data?.choices?.[0]?.message?.content?.trim() || '';
 
     if (!text) {
       console.warn('[CLOVA-REWRITE] 빈 응답 수신');
