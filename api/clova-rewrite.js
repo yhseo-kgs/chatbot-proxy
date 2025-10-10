@@ -39,23 +39,30 @@ module.exports = async (req, res) => {
 
     const url = `https://clovastudio.stream.ntruss.com/v3/chat-completions/${CLOVA_MODEL_ID}`;
     
-    // 가드레일(system) + llm_payload(user) 분리
-    const GUARDRAIL = [
-      "공손하고 명확한 '~합니다'체로 2–3줄만 답하세요.",
-      "수치/용어는 원문 그대로 보존하고, 허위 추정 금지.",
-      "불필요한 서론·하이픈 불릿 금지. 문맥 전환 시 한 줄 공백."
-    ].join(" ");
+    // HCX-007 v3 규격에 맞는 payload 구조
+    const GUARDRAIL = "공손하고 명확한 '~합니다'체로 2–3줄만 답하세요. 수치·용어는 원문 그대로 유지하세요.";
     
     const payload = {
       messages: [
-        { role: 'system', content: GUARDRAIL },  // 고정 규칙
-        { role: 'user', content: message }       // llm_payload (참고 정보)
+        {
+          role: "system",
+          content: [
+            { type: "text", text: GUARDRAIL }
+          ]
+        },
+        {
+          role: "user",
+          content: [
+            { type: "text", text: message }
+          ]
+        }
       ],
+      thinking: { effort: "low" },
       temperature: 0.25,
       topP: 0.8,
       topK: 0,
-      repeatPenalty: 1.2,
-      maxTokens: 600
+      repetitionPenalty: 1.1,
+      maxCompletionTokens: 800
     };
 
     const response = await fetch(url, {
@@ -74,7 +81,7 @@ module.exports = async (req, res) => {
     }
 
     const data = await response.json();
-    const text = data?.choices?.[0]?.message?.content?.trim() || '';
+    const text = data?.result?.message?.content?.trim() || '';
 
     if (!text) {
       console.warn('[CLOVA-REWRITE] 빈 응답 수신');
