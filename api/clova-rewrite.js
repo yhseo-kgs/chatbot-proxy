@@ -20,7 +20,9 @@ export default async function handler(req, res) {
       messages: [
         {
           role: "system",
-          content: [{ type: "text", text: "공손하고 명확한 '~합니다'체로 2–3줄만 답하세요. 수치·용어는 원문 그대로 유지하세요." }]
+          content: [{ type: "text", text: "공손하고 명확한 '~합니다'체로 완전한 문장으로 답하세요. " +
+            "답변은 중간에 끊기지 않도록 하고, 자연스럽게 종결어미로 마무리하세요. " +
+            "수치·용어는 원문 그대로 유지하세요." }]
         },
         {
           role: "user",
@@ -32,7 +34,7 @@ export default async function handler(req, res) {
       topP: 0.8,
       topK: 0,
       repetitionPenalty: 1.1,
-      maxCompletionTokens: 1024
+      maxCompletionTokens: 2048
     };
 
     // ✅ HCX-007 엔드포인트 요청
