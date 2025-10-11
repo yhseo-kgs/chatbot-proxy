@@ -1,4 +1,4 @@
-// ✅ CLOVA Studio HCX-007 Chat Completions v3 + Vercel ESM 환경 완전 대응 버전
+// ✅ CLOVA Studio HCX-005 Chat Completions v3 + Vercel ESM 환경 완전 대응 버전
 export default async function handler(req, res) {
   // ✅ CORS 헤더 설정 (브라우저 호출용)
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -50,9 +50,9 @@ export default async function handler(req, res) {
       maxCompletionTokens: 512
     };
 
-    // ✅ HCX-007 엔드포인트 요청
+    // ✅ HCX-005 엔드포인트 요청
     const response = await fetch(
-      "https://clovastudio.stream.ntruss.com/v3/chat-completions/HCX-007",
+      "https://clovastudio.stream.ntruss.com/v3/chat-completions/HCX-005",
       {
         method: "POST",
         headers: {

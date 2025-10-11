@@ -203,7 +203,7 @@ module.exports = async (req, res) => {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ ok:false, error:'Method Not Allowed' });
 
-  const { CLOVA_API_KEY, CLOVA_MODEL_ID='HCX-007' } = process.env;
+  const { CLOVA_API_KEY, CLOVA_MODEL_ID='HCX-005' } = process.env;
   if (!CLOVA_API_KEY) {
     return res.status(401).json({ 
       ok:false, 
