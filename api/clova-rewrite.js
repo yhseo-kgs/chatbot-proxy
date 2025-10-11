@@ -1,5 +1,18 @@
 // ✅ CLOVA Studio HCX-007 Chat Completions v3 + Vercel ESM 환경 완전 대응 버전
 export default async function handler(req, res) {
+  // ✅ CORS 헤더 설정 (브라우저 호출용)
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
+  if (req.method !== 'POST') {
+    return res.status(405).json({ ok: false, error: 'Method Not Allowed' });
+  }
+
   try {
     // ✅ 요청 파싱
     const body = req.body || (await req.json?.());
