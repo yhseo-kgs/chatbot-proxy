@@ -57,7 +57,7 @@ async function runClova(messages, CLOVA_API_KEY, CLOVA_MODEL_ID) {
       topP: 0.8,
       topK: 0,
       repetitionPenalty: 1.1,  // ✅ v3 규격 이름으로 변경 + 현실적 수치
-      maxCompletionTokens: 2048
+      maxCompletionTokens: 512
     })
   });
 

@@ -47,7 +47,7 @@ export default async function handler(req, res) {
       topP: 0.8,
       topK: 0,
       repetitionPenalty: 1.1,
-      maxCompletionTokens: 2048
+      maxCompletionTokens: 512
     };
 
     // ✅ HCX-007 엔드포인트 요청
