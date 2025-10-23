@@ -179,14 +179,14 @@ export default async function handler(req, res) {
     // -----------------------------
     // 3-5. top1 필드 정규화 (먼저 수행)
     // -----------------------------
-    const t1 = ranked[0]; // 원본
+    const t1 = top1; // 이미 계산된 top1 사용
     const normalizedTop1 = {
       id: t1.id ?? t1._id ?? t1.qid ?? null,
       question: t1.question ?? t1.Q ?? t1.text ?? "",
       answer: t1.answer ?? t1.A ?? t1.text ?? "",
-      score: t1.score ?? t1.similarity ?? cosScore,
-      similarity: t1.similarity ?? cosScore,
-      final_score: t1.final_score ?? cosScore,
+      score: t1.score ?? t1.similarity ?? t1.similarity,
+      similarity: t1.similarity ?? t1.similarity,
+      final_score: t1.final_score ?? t1.similarity,
       category: t1.category ?? t1.cat ?? ""
     };
 
