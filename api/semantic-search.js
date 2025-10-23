@@ -149,17 +149,6 @@ export default async function handler(req, res) {
         tagMatch * weights.tag + 
         catMatch * weights.cat;
 
-      // ✅ 디버깅: 첫 번째 항목만 상세 로그
-      if (results.length === 0) {
-        console.log("[SEM] 🔍 첫 번째 항목 원본 데이터:", {
-          id_qna: item.id_qna,
-          question_qna: item.question_qna?.substring(0, 30),
-          answer_qna: item.answer_qna?.substring(0, 50) || "EMPTY",
-          answer_qna_length: item.answer_qna?.length || 0,
-          category: item.category
-        });
-      }
-
       return {
         id: item.id_qna,
         question: item.question_qna,
@@ -188,52 +177,22 @@ export default async function handler(req, res) {
     }
 
     // -----------------------------
-    // 3-5. top1 필드 정규화 (방어 코드 추가)
+    // 3-5. 클로바 전달용 payload 생성
     // -----------------------------
-    const t1 = topN?.[0] || {}; // 완전한 방어 처리
-    const normalizedTop1 = {
-      id: t1.id ?? t1.id_qna ?? t1._id ?? t1.qid ?? null,
-      question: t1.question ?? t1.question_qna ?? t1.Q ?? t1.text ?? "",
-      answer: t1.answer ?? t1.answer_qna ?? t1.A ?? t1.text ?? "",
-      score: t1.score ?? t1.similarity ?? 0,
-      similarity: t1.similarity ?? 0,
-      final_score: t1.final_score ?? 0,
-      category: t1.category ?? t1.cat ?? ""
-    };
+    const llm_payload = `다음 정보를 참고하여 사용자의 질문에 공손하고 명확하게 답변하세요.
 
-    // ✅ 상세 디버깅 로그
-    console.log("[SEM] 🔍 원본 t1 객체:", t1);
-    console.log("[SEM] 🔍 t1의 모든 키:", Object.keys(t1 || {}));
-    console.log("[SEM] 🔍 t1.answer:", t1?.answer);
-    console.log("[SEM] 🔍 t1.answer_qna:", t1?.answer_qna);
-    console.log("[SEM] 🔍 t1.A:", t1?.A);
-    console.log("[SEM] 🔍 t1.text:", t1?.text);
-    
-    console.log("[SEM] top1 필드 정규화 완료:", {
-      id: normalizedTop1.id,
-      hasAnswer: !!normalizedTop1.answer,
-      answerLength: normalizedTop1.answer?.length || 0,
-      answerPreview: normalizedTop1.answer?.substring(0, 50) || "EMPTY",
-      originalKeys: Object.keys(t1 || {})
-    });
+카테고리: ${top1.category || "미분류"}
+관련 질문: ${top1.question}
+답변: ${top1.answer}
+
+답변 규칙:
+- '~합니다'체로 공손하게 작성
+- 핵심만 간결하게 전달
+- 불필요한 부연 설명 제외
+`;
 
     // -----------------------------
-    // 3-6. 클로바 전달용 payload 생성 (정규화된 top1 사용)
-    // -----------------------------
-    const llm_payload = `QNA_ID: ${normalizedTop1.id}
-Q: ${normalizedTop1.question}
-A(원문): ${normalizedTop1.answer}
-${normalizedTop1.category ? `카테고리: ${normalizedTop1.category}` : ""}
-
-내용을 수정하거나 요약하지 말고, 문체만 공손하게 '~합니다' 형태로 정리하세요.
-- 제공된 '답변'의 핵심 내용은 생략하거나 요약하지 않는다.
-- 법령명, 숫자, 절차 등 사실을 절대 수정하지 않는다.`;
-
-    // llm_payload를 정규화된 객체에 추가
-    normalizedTop1.llm_payload = llm_payload;
-
-    // -----------------------------
-    // 3-7. 콘솔 로그 (튜닝용)
+    // 3-6. 콘솔 로그 (튜닝용)
     // -----------------------------
     const elapsed = Date.now() - startTime;
     console.log(`[SEM] ⏱️  Processed in ${elapsed}ms`);
@@ -251,11 +210,18 @@ ${normalizedTop1.category ? `카테고리: ${normalizedTop1.category}` : ""}
         `question="${r.question.substring(0, 30)}..."`
       );
     });
+    
 
+    // -----------------------------
+    // 3-7. 응답 반환
+    // -----------------------------
     return res.status(200).json({
       success: true,
       merged_query,
-      top1: normalizedTop1,
+      top1: { 
+        ...top1, 
+        llm_payload 
+      },
       topN,
       meta: {
         model: "text-embedding-3-large",
