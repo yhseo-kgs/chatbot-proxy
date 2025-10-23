@@ -150,9 +150,9 @@ export default async function handler(req, res) {
         catMatch * weights.cat;
 
       return {
-        id: item.id_qna,
+        id: item.id,
         question: item.question_qna,
-        answer: item.answer_qna,
+        answer: item.answer,
         category: item.category,
         tags: allTags,
         similarity: cos,
@@ -190,6 +190,16 @@ export default async function handler(req, res) {
 - 핵심만 간결하게 전달
 - 불필요한 부연 설명 제외
 `;
+
+    // ✅ 디버깅: answer 전달 확인
+    console.log("[SEM] 🔍 Answer 전달 확인:", {
+      hasAnswer: !!top1.answer,
+      answerLength: top1.answer?.length,
+      answerPreview: top1.answer?.substring(0, 100) + "...",
+      hasKoreanChars: /[가-힣]/.test(top1.answer || ""),
+      payloadLength: llm_payload.length,
+      payloadPreview: llm_payload.substring(0, 200) + "..."
+    });
 
     // -----------------------------
     // 3-6. 콘솔 로그 (튜닝용)

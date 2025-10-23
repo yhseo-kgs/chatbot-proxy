@@ -35,6 +35,16 @@ export default async function handler(req, res) {
     const body = req.body || (await req.json?.());
     const message = body?.message || "기본 질문입니다.";
     const intent = body?.intent; // 의도 감지 (greet 등)
+    
+    // ✅ 디버깅: 요청 데이터 확인
+    console.log("[CLOVA-REWRITE] 📥 요청 데이터:", {
+      message: message?.substring(0, 100) + "...",
+      messageLength: message?.length,
+      intent,
+      bodyKeys: Object.keys(body || {}),
+      hasAnswer: !!body?.answer,
+      answerPreview: body?.answer ? body.answer.substring(0, 100) + "..." : "없음"
+    });
 
     // ✅ 환경 변수 검사 (API Key만)
     if (!process.env.CLOVA_API_KEY) {
@@ -121,8 +131,19 @@ export default async function handler(req, res) {
     // ✅ 문장 말미 기준 줄바꿈 보정 (가독성)
     text = text.replace(/([.!?])\s+(?=[가-힣A-Z])/g, '$1\n\n').trim();
 
-    console.log("[CLOVA-REWRITE] 응답 구조:", JSON.stringify(data, null, 2));
-    console.log("[CLOVA-REWRITE] 후처리 완료:", text.substring(0, 100) + "...");
+    // ✅ 디버깅: 응답 데이터 확인
+    console.log("[CLOVA-REWRITE] 📤 응답 데이터:", {
+      originalResponse: data?.result?.message?.content?.substring(0, 100) + "...",
+      processedText: text.substring(0, 100) + "...",
+      textLength: text.length,
+      hasKoreanChars: /[가-힣]/.test(text),
+      responseStructure: {
+        hasResult: !!data?.result,
+        hasMessage: !!data?.result?.message,
+        hasContent: !!data?.result?.message?.content,
+        hasChoices: !!data?.choices
+      }
+    });
 
     // ✅ 결과 반환
     res.status(200).json({
