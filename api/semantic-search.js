@@ -177,16 +177,16 @@ export default async function handler(req, res) {
     }
 
     // -----------------------------
-    // 3-5. top1 필드 정규화 (먼저 수행)
+    // 3-5. top1 필드 정규화 (방어 코드 추가)
     // -----------------------------
-    const t1 = top1; // 이미 계산된 top1 사용
+    const t1 = topN?.[0] || {}; // 완전한 방어 처리
     const normalizedTop1 = {
       id: t1.id ?? t1._id ?? t1.qid ?? null,
       question: t1.question ?? t1.Q ?? t1.text ?? "",
       answer: t1.answer ?? t1.A ?? t1.text ?? "",
-      score: t1.score ?? t1.similarity ?? t1.similarity,
-      similarity: t1.similarity ?? t1.similarity,
-      final_score: t1.final_score ?? t1.similarity,
+      score: t1.score ?? t1.similarity ?? 0,
+      similarity: t1.similarity ?? 0,
+      final_score: t1.final_score ?? 0,
       category: t1.category ?? t1.cat ?? ""
     };
 
