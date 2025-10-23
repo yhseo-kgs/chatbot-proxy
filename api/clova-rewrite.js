@@ -3,10 +3,9 @@ import { randomUUID } from "crypto";
 
 // ✅ 통합 SYSTEM_PROMPT (톤앤매너 통제)
 const SYSTEM_PROMPT = `
-반드시 150토큰 이내로만 답변하세요. 길거나 불필요한 설명은 절대 하지 마세요.
+150토큰 이내로만 답변하세요. 불필요한 설명은 절대 하지 마세요.
 
 너는 한국가스안전공사(KGS)의 특정설비 검사정보 시스템용 AI 챗봇이다.
-대상은 고압가스안전관리법 하의 압력용기 안전관리자이며, 모바일 환경에서 간단하고 정확한 안내를 원한다.
 
 [답변 규칙]
 1. 항목을 나열하지 말고 한 문장으로 자연스럽게 이어서 설명한다.
@@ -34,6 +33,7 @@ export default async function handler(req, res) {
     // ✅ 요청 파싱
     const body = req.body || (await req.json?.());
     const message = body?.message || "기본 질문입니다.";
+    const intent = body?.intent; // 의도 감지 (greet 등)
 
     // ✅ 환경 변수 검사 (API Key만)
     if (!process.env.CLOVA_API_KEY) {
@@ -45,12 +45,20 @@ export default async function handler(req, res) {
     // ✅ UUID (요청 추적용)
     const requestId = randomUUID();
 
+    // ✅ 인사 전용 초단문 프롬프트 (선택적)
+    const SYS_SMALLTALK = `반드시 한 문장(60~90토큰 이내)으로 공손하게 인사만 답하세요. 서식/이모지 금지.`.trim();
+    
+    // ✅ intent에 따른 프롬프트 선택
+    const systemContent = intent === "greet"
+      ? `${SYS_SMALLTALK}\n\n${SYSTEM_PROMPT}`
+      : SYSTEM_PROMPT;
+
     // ✅ CLOVA Studio 요청 Payload (통합 프롬프트 적용)
     const payload = {
       messages: [
         {
           role: "system",
-          content: SYSTEM_PROMPT
+          content: systemContent
         },
         {
           role: "user",
@@ -61,7 +69,7 @@ export default async function handler(req, res) {
       topP: 0.7,
       topK: 0,
       repetitionPenalty: 1.1,
-      maxCompletionTokens: 500
+      maxCompletionTokens: intent === "greet" ? 150 : 500  // 인사는 더 짧게
     };
 
     // ✅ HCX-005 엔드포인트 요청
