@@ -177,19 +177,44 @@ export default async function handler(req, res) {
     }
 
     // -----------------------------
-    // 3-5. 클로바 전달용 payload 생성 (개선된 구조)
+    // 3-5. top1 필드 정규화 (먼저 수행)
     // -----------------------------
-    const llm_payload = `QNA_ID: ${top1.id}
-Q: ${top1.question}
-A(원문): ${top1.answer}
-${top1.category ? `카테고리: ${top1.category}` : ""}
+    const t1 = ranked[0]; // 원본
+    const normalizedTop1 = {
+      id: t1.id ?? t1._id ?? t1.qid ?? null,
+      question: t1.question ?? t1.Q ?? t1.text ?? "",
+      answer: t1.answer ?? t1.A ?? t1.text ?? "",
+      score: t1.score ?? t1.similarity ?? cosScore,
+      similarity: t1.similarity ?? cosScore,
+      final_score: t1.final_score ?? cosScore,
+      category: t1.category ?? t1.cat ?? ""
+    };
+
+    // ✅ 디버깅 로그
+    console.log("[SEM] top1 필드 정규화 완료:", {
+      id: normalizedTop1.id,
+      hasAnswer: !!normalizedTop1.answer,
+      answerLength: normalizedTop1.answer?.length || 0,
+      originalKeys: Object.keys(t1 || {})
+    });
+
+    // -----------------------------
+    // 3-6. 클로바 전달용 payload 생성 (정규화된 top1 사용)
+    // -----------------------------
+    const llm_payload = `QNA_ID: ${normalizedTop1.id}
+Q: ${normalizedTop1.question}
+A(원문): ${normalizedTop1.answer}
+${normalizedTop1.category ? `카테고리: ${normalizedTop1.category}` : ""}
 
 내용을 수정하거나 요약하지 말고, 문체만 공손하게 '~합니다' 형태로 정리하세요.
 - 제공된 '답변'의 핵심 내용은 생략하거나 요약하지 않는다.
 - 법령명, 숫자, 절차 등 사실을 절대 수정하지 않는다.`;
 
+    // llm_payload를 정규화된 객체에 추가
+    normalizedTop1.llm_payload = llm_payload;
+
     // -----------------------------
-    // 3-6. 콘솔 로그 (튜닝용)
+    // 3-7. 콘솔 로그 (튜닝용)
     // -----------------------------
     const elapsed = Date.now() - startTime;
     console.log(`[SEM] ⏱️  Processed in ${elapsed}ms`);
@@ -207,18 +232,11 @@ ${top1.category ? `카테고리: ${top1.category}` : ""}
         `question="${r.question.substring(0, 30)}..."`
       );
     });
-    
 
-    // -----------------------------
-    // 3-7. 응답 반환
-    // -----------------------------
     return res.status(200).json({
       success: true,
       merged_query,
-      top1: { 
-        ...top1, 
-        llm_payload 
-      },
+      top1: normalizedTop1,
       topN,
       meta: {
         model: "text-embedding-3-large",
