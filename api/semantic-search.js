@@ -149,6 +149,17 @@ export default async function handler(req, res) {
         tagMatch * weights.tag + 
         catMatch * weights.cat;
 
+      // ✅ 디버깅: 첫 번째 항목만 상세 로그
+      if (results.length === 0) {
+        console.log("[SEM] 🔍 첫 번째 항목 원본 데이터:", {
+          id_qna: item.id_qna,
+          question_qna: item.question_qna?.substring(0, 30),
+          answer_qna: item.answer_qna?.substring(0, 50) || "EMPTY",
+          answer_qna_length: item.answer_qna?.length || 0,
+          category: item.category
+        });
+      }
+
       return {
         id: item.id_qna,
         question: item.question_qna,
@@ -190,11 +201,19 @@ export default async function handler(req, res) {
       category: t1.category ?? t1.cat ?? ""
     };
 
-    // ✅ 디버깅 로그
+    // ✅ 상세 디버깅 로그
+    console.log("[SEM] 🔍 원본 t1 객체:", t1);
+    console.log("[SEM] 🔍 t1의 모든 키:", Object.keys(t1 || {}));
+    console.log("[SEM] 🔍 t1.answer:", t1?.answer);
+    console.log("[SEM] 🔍 t1.answer_qna:", t1?.answer_qna);
+    console.log("[SEM] 🔍 t1.A:", t1?.A);
+    console.log("[SEM] 🔍 t1.text:", t1?.text);
+    
     console.log("[SEM] top1 필드 정규화 완료:", {
       id: normalizedTop1.id,
       hasAnswer: !!normalizedTop1.answer,
       answerLength: normalizedTop1.answer?.length || 0,
+      answerPreview: normalizedTop1.answer?.substring(0, 50) || "EMPTY",
       originalKeys: Object.keys(t1 || {})
     });
 
