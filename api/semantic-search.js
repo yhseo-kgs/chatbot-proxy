@@ -181,9 +181,9 @@ export default async function handler(req, res) {
     // -----------------------------
     const t1 = topN?.[0] || {}; // 완전한 방어 처리
     const normalizedTop1 = {
-      id: t1.id ?? t1._id ?? t1.qid ?? null,
-      question: t1.question ?? t1.Q ?? t1.text ?? "",
-      answer: t1.answer ?? t1.A ?? t1.text ?? "",
+      id: t1.id ?? t1.id_qna ?? t1._id ?? t1.qid ?? null,
+      question: t1.question ?? t1.question_qna ?? t1.Q ?? t1.text ?? "",
+      answer: t1.answer ?? t1.answer_qna ?? t1.A ?? t1.text ?? "",
       score: t1.score ?? t1.similarity ?? 0,
       similarity: t1.similarity ?? 0,
       final_score: t1.final_score ?? 0,
