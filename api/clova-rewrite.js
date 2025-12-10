@@ -1,6 +1,7 @@
 // ✅ CLOVA Studio HCX-005 Chat Completions v3 + Vercel ESM 환경 완전 대응 버전
 import { randomUUID } from "crypto";
 import { applyCors } from './_cors.js';
+import { rateLimit } from './_rateLimit.js';
 
 // ✅ 통합 SYSTEM_PROMPT (톤앤매너 통제)
 const SYSTEM_PROMPT = `
@@ -20,6 +21,10 @@ const SYSTEM_PROMPT = `
 export default async function handler(req, res) {
   const ended = applyCors(req, res);
   if (ended) return;
+
+  // Rate Limit 체크
+  const limited = rateLimit(req, res);
+  if (limited) return;
 
   if (req.method !== 'POST') {
     return res.status(405).json({ ok: false, error: 'Method Not Allowed' });

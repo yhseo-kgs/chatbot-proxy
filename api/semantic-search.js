@@ -5,6 +5,7 @@ import fs from "fs";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import { applyCors } from './_cors.js';
+import { rateLimit } from './_rateLimit.js';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -48,6 +49,10 @@ try {
 export default async function handler(req, res) {
   const ended = applyCors(req, res);
   if (ended) return;
+
+  // Rate Limit 체크
+  const limited = rateLimit(req, res);
+  if (limited) return;
 
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
