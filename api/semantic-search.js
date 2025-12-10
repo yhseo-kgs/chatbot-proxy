@@ -13,7 +13,6 @@ const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 // -----------------------------
 function cosineSimilarity(vecA, vecB) {
   if (!vecA || !vecB || vecA.length !== vecB.length) {
-    console.error("[SEM] ⚠️ Vector dimension mismatch");
     return 0;
   }
   
@@ -35,13 +34,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const dataPath = path.join(__dirname, "..", "public", "data", "chatbot_qna.json");
 
 try {
-  console.log(`[SEM] 🔍 Looking for data at: ${dataPath}`);
-  console.log(`[SEM] 🔍 Current working directory: ${process.cwd()}`);
-  console.log(`[SEM] 🔍 __dirname: ${__dirname}`);
-  
   const raw = fs.readFileSync(dataPath, "utf-8");
   qnaData = JSON.parse(raw);
-  console.log(`[SEM] ✅ QnA data loaded: ${qnaData.length} items`);
 } catch (err) {
   console.error("[SEM] ❌ Failed to load QnA JSON:", err.message);
   console.error("[SEM] ❌ File path attempted:", dataPath);
@@ -93,11 +87,6 @@ export default async function handler(req, res) {
         ? `${lastContext} ${query}`
         : query;
 
-    console.log(`[SEM] 🔍 query="${query}"`);
-    if (merged_query !== query) {
-      console.log(`[SEM] 🔄 merged="${merged_query}"`);
-    }
-
     // -----------------------------
     // 3-2. OpenAI 임베딩 생성
     // -----------------------------
@@ -106,11 +95,6 @@ export default async function handler(req, res) {
       input: merged_query,
     });
     const queryVec = embeddingResponse.data[0].embedding;
-
-    // 벡터 차원 검증
-    if (queryVec.length !== 3072) {
-      console.warn(`[SEM] ⚠️ Unexpected vector dimension: ${queryVec.length}`);
-    }
 
     // -----------------------------
     // 3-3. 유사도 계산 + 가중치 적용
@@ -166,11 +150,6 @@ export default async function handler(req, res) {
     
     const top1 = topN[0];
 
-    // 유사도가 너무 낮으면 경고
-    if (top1.similarity < 0.3) {
-      console.warn(`[SEM] ⚠️ Low similarity: ${top1.similarity.toFixed(3)}`);
-    }
-
     // -----------------------------
     // 3-5. 클로바 전달용 payload 생성
     // -----------------------------
@@ -185,39 +164,6 @@ export default async function handler(req, res) {
 - 핵심만 간결하게 전달
 - 불필요한 부연 설명 제외
 `;
-
-    // ✅ 디버깅: answer 전달 확인 (조건부)
-    if (process.env.DEBUG_SEMANTIC === 'true') {
-      console.log("[SEM] 🔍 Answer 전달 확인:", {
-        hasAnswer: !!top1.answer,
-        answerLength: top1.answer?.length,
-        answerPreview: top1.answer?.substring(0, 100) + "...",
-        hasKoreanChars: /[가-힣]/.test(top1.answer || ""),
-        payloadLength: llm_payload.length,
-        payloadPreview: llm_payload.substring(0, 200) + "..."
-      });
-    }
-
-    // -----------------------------
-    // 3-6. 콘솔 로그 (튜닝용)
-    // -----------------------------
-    const elapsed = Date.now() - startTime;
-    console.log(`[SEM] ⏱️  Processed in ${elapsed}ms`);
-    
-    // 상세 디버깅 로그 추가
-    console.log(`[SEM] 🔍 Query vector length: ${queryVec.length}`);
-    console.log(`[SEM] 🔍 Total items processed: ${results.length}`);
-    
-    topN.forEach((r, i) => {
-      console.log(
-        `[SEM] top${i + 1}: id=${r.id} ` +
-        `cos=${r.similarity.toFixed(3)} ` +
-        `tag=${r.tag_match} cat=${r.cat_match} ` +
-        `final=${r.final_score.toFixed(3)} ` +
-        `question="${r.question.substring(0, 30)}..."`
-      );
-    });
-    
 
     // -----------------------------
     // 3-7. 응답 반환
@@ -234,7 +180,7 @@ export default async function handler(req, res) {
         model: "text-embedding-3-large",
         dimension: queryVec.length,
         total_items: qnaData.length,
-        elapsed_ms: elapsed,
+        elapsed_ms: Date.now() - startTime,
         weights,
       },
     });
