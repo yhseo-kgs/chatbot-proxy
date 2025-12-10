@@ -193,9 +193,9 @@ export default async function handler(req, res) {
   } catch (err) {
     console.error("[SEM] ❌ Error in semantic search:", err);
     return res.status(500).json({ 
+      ok: false,
       error: "Semantic search failed", 
-      details: err.message,
-      stack: process.env.NODE_ENV === 'development' ? err.stack : undefined
+      details: "서버 처리 중 오류가 발생했습니다. (E500-SEM)"
     });
   }
 }

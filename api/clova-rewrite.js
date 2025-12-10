@@ -94,7 +94,8 @@ export default async function handler(req, res) {
       return res.status(502).json({ 
         ok: false, 
         error: "Clova upstream error",
-        status: response.status 
+        status: response.status,
+        details: "AI 엔진 연결에 문제가 발생했습니다. 잠시 후 다시 시도해 주세요. (E502-CLOVA)"
       });
     }
 
@@ -129,7 +130,11 @@ export default async function handler(req, res) {
     });
   } catch (error) {
     console.error("[CLOVA-REWRITE] 오류:", error);
-    res.status(500).json({ ok: false, error: error.message });
+    res.status(500).json({ 
+      ok: false, 
+      error: "Internal Server Error", 
+      details: "서버 처리 중 오류가 발생했습니다. (E500-CLOVA)" 
+    });
   }
 }
 
